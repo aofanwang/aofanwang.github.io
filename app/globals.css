@@ -31,3 +31,32 @@ h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400}em,.principles
 @media(max-width:480px){.case-study{grid-template-columns:1fr}.case-study-image{height:190px;min-height:190px;max-height:190px}.case-study-copy{padding:22px}.case-study h3{font-size:26px}.case-study-list{gap:22px}}
 
 .case-studies #feelzoo .case-study-image{background:#f4ecdf}.case-studies #feelzoo .case-study-image img{object-fit:contain}
+
+/* Dedicated curriculum case study. */
+.project-link{display:inline-flex;align-items:center;gap:24px;margin-top:22px;color:var(--primary);font-size:16px;line-height:1.5}
+.curriculum-page.wrap{width:min(980px,calc(100% - 64px));padding-top:24px;padding-bottom:64px}
+.project-back{display:inline-flex;align-items:center;gap:10px;color:var(--primary);font-size:14px}
+.curriculum-heading{margin:40px 0 36px}
+.curriculum-heading .eyebrow,.curriculum-section>.eyebrow{color:var(--primary);letter-spacing:0}
+.curriculum-heading h1{width:auto;max-width:850px;font-size:56px;line-height:1.12;letter-spacing:0;margin-top:16px}
+.curriculum-process{max-width:760px;display:grid;gap:28px}
+.curriculum-process h2{font-size:26px;line-height:1.25;letter-spacing:0;margin:0 0 10px}
+.curriculum-process p{color:var(--muted-foreground);font-size:17px;line-height:1.75}
+.curriculum-index{display:flex;flex-wrap:wrap;gap:24px 40px;margin:44px 0 0;padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.curriculum-index a{display:inline-flex;align-items:center;gap:16px;color:var(--primary)}
+.curriculum-section{padding-top:48px;scroll-margin-top:28px}
+.curriculum-section+.curriculum-section{margin-top:40px;border-top:1px solid var(--border)}
+.curriculum-section h2{font-size:36px;letter-spacing:0;margin-top:12px}
+.curriculum-figure{margin:26px 0 0;max-width:760px}
+.curriculum-figure img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.curriculum-figure figcaption{font-size:12px;color:var(--muted-foreground);margin-top:8px}
+.curriculum-return{margin-top:48px}
+@media(max-width:650px){.curriculum-page.wrap{width:calc(100% - 40px);padding-top:32px}.curriculum-heading{margin-top:30px}.curriculum-heading h1{font-size:38px}.curriculum-process h2{font-size:24px}.curriculum-process p{font-size:16px}.curriculum-index{flex-direction:column;gap:18px}.curriculum-section h2{font-size:30px}}
+.course-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.course-project{display:block;min-width:0}
+.course-project h2{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:30px;letter-spacing:0;margin:0 0 18px}
+.course-project h2 svg{color:var(--primary);flex-shrink:0}
+.course-project-photo{border:1px solid var(--border);aspect-ratio:4/3;overflow:hidden}
+.course-project-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.course-project:hover .course-project-photo{border-color:var(--primary)}
+@media(max-width:600px){.course-projects{grid-template-columns:1fr;gap:32px}.course-project h2{font-size:28px}}
