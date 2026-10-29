@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 export const metadata = { title: 'Truck Lesson | Aofan Wang' };
 
@@ -12,14 +12,15 @@ export default function CourseProject() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/#about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a>
+          <a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a>
         </nav>
       </header>
       <main id="project-main" className="wrap curriculum-page">
-        <a className="project-back" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From curiosity to curriculum</a>
+        <a className="project-back" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From Observation to Design</a>
         <header className="curriculum-heading">
           <span className="eyebrow">LEARNING EXPERIENCE DESIGN</span>
           <h1>Truck Lesson</h1>
+          <a className="project-link" href="/work/from-curiosity-to-curriculum/truck-lesson/level-one">Truck Mission: Level 1<ArrowUpRight size={18} aria-hidden="true" /></a>
         </header>
         <section className="curriculum-process" aria-label="Design approach">
           <div>
