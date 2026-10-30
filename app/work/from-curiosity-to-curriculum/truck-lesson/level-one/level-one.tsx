@@ -1,82 +1,34 @@
-'use client';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import styles from './case-study.module.css';
 
-import { useState } from 'react';
-import { ArrowLeft, ArrowUpRight, Check, Lightbulb, MessageCircle } from 'lucide-react';
-
-const screens = [
-  { name: 'The choice', image: '/truck-mission-screen-3.png', alt: 'Canva prototype: choose an excavator, dump truck or crane to dig a hole for playground slides' },
-  { name: 'Success feedback', image: '/truck-mission-screen-4.png', alt: 'Canva prototype: an excavator digging with feedback explaining its bucket' },
-  { name: 'Try again', image: '/truck-mission-screen-5.png', alt: 'Canva prototype: dump truck feedback explains carrying rather than digging, with a try again button' },
-];
-
-const thoughts = [
-  {
-    title: 'A reason to choose', label: 'The mission', icon: Lightbulb, tone: 'yellow', screen: 0, status: 'In the prototype',
-    decision: 'A playground task gives the machine choice a concrete purpose: we need a hole for the slides.',
-    tension: 'The setting can make the task meaningful, but children may choose a favorite character instead of considering the job.',
-    test: 'Look for whether children connect their choice to digging, through words, gestures, or actions.',
-  },
-  {
-    title: 'More than “correct”', label: 'The feedback', icon: MessageCircle, tone: 'green', screen: 2, status: 'In the prototype',
-    decision: 'The success screen connects the excavator’s bucket to digging. The retry screen explains why the dump truck is not the right choice for this task.',
-    tension: 'An explanation is available, but written feedback may not help a child who cannot yet read it independently.',
-    test: 'Observe whether children reconsider after feedback or simply cycle through the remaining answers.',
-  },
+const decisions = [
+  ['Why three choices?', 'A small, consistent set keeps the comparison focused on machine functions.'],
+  ['Why explanatory feedback?', 'Explaining what a machine does gives children a reason to reconsider, instead of simply marking an answer wrong.'],
+  ['Why replayable audio?', 'Spoken prompts aim to reduce reliance on reading and adult help. This design assumption still needs learner testing.'],
 ];
 
 export default function LevelOne() {
-  const [selected, setSelected] = useState(0);
-  const thought = thoughts[selected];
-  const screen = screens[thought.screen];
-
-  return (
-    <>
-      <a className="skip" href="#mission-main">Skip to content</a>
-      <header className="wrap header">
-        <div className="identity">
-          <a className="brand" href="/">Aofan Wang</a>
-          <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
-        </div>
-        <nav aria-label="Main navigation"><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a></nav>
+  return <>
+    <a className="skip" href="#mission-main">Skip to content</a>
+    <header className="wrap header"><div className="identity"><a className="brand" href="/">Aofan Wang</a><p className="identity-line">Educator · Learning designer · Researcher · Builder</p></div><nav aria-label="Main navigation"><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a></nav></header>
+    <main id="mission-main" className={styles.page}>
+      <a className="project-back" href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to selected work</a>
+      <header className={styles.heading}>
+        <span className={styles.eyebrow}>INTERACTIVE LEARNING DESIGN</span>
+        <h1>Truck Mission</h1>
+        <p className={styles.lead}>The right machine for the job.</p>
+        <p>Designed for children aged 5–6 to connect construction vehicles with their functions through individual play. The learning goal: match digging, carrying, and lifting with the right machine.</p>
+        <dl className={styles.facts}><div><dt>Audience</dt><dd>Children aged 5–6</dd></div><div><dt>Tools</dt><dd>Canva · HTML / CSS / JavaScript</dd></div><div><dt>Status</dt><dd>Level 1 prototype · Not learner-tested</dd></div></dl>
       </header>
-      <main id="mission-main" className="wrap mission-page mission-simple">
-        <a className="project-back" href="/work/from-curiosity-to-curriculum/truck-lesson"><ArrowLeft size={18} aria-hidden="true" />Truck Lesson</a>
-        <header className="mission-heading">
-          <span className="eyebrow">DIGITAL LEARNING / LEVEL 01</span>
-          <h1>Truck Mission</h1>
-          <p>How might children choose a machine, understand feedback, and continue without adult help?</p>
-          <div className="mission-meta"><span>Primary audience: ages 5–6</span><span>Designed for independent play</span><span className="mission-status">Prototype · Not learner-tested</span></div>
-        </header>
-        <section className="mission-workbench" aria-labelledby="mission-challenge">
-          <div className="mission-section-heading"><h2 id="mission-challenge">Behind the choices</h2><a className="mission-canva" href="https://www.canva.com/d/MA8OFJhvKcPcvTT" target="_blank" rel="noreferrer">Original Canva design<ArrowUpRight size={16} aria-hidden="true" /></a></div>
-          <div className="mission-bubbles" role="group" aria-label="Design thoughts">
-            {thoughts.map((item, index) => { const Icon = item.icon; const open = selected === index; return (
-              <button type="button" key={item.title} className={`mission-bubble ${item.tone}`} aria-pressed={open} aria-controls="mission-design-detail" onClick={() => setSelected(index)}>
-                <span className="mission-bubble-label"><Icon size={18} aria-hidden="true" />{item.label}</span><strong>{item.title}</strong><span className="mission-bubble-state" aria-hidden="true">{open ? <Check size={16} /> : <span>+</span>}</span>
-              </button>
-            ); })}
-          </div>
-          <div id="mission-design-detail" className="mission-design-detail">
-            <figure className="mission-screen">
-              <img key={screen.image} src={screen.image} alt={screen.alt} width={596} height={335} />
-              <figcaption>Level 1 · {screen.name} · Current Canva prototype</figcaption>
-            </figure>
-              <article key={thought.title} className={`mission-thought ${thought.tone}`} aria-label={thought.title}>
-                <dl><div><dt>The decision</dt><dd>{thought.decision}</dd></div><div><dt>The trade-off</dt><dd>{thought.tension}</dd></div><div><dt>What I would test</dt><dd>{thought.test}</dd></div></dl>
-              </article>
-          </div>
-        </section>
-        <section className="mission-next" aria-labelledby="next-question">
-          <span className="eyebrow">PROPOSED · NOT YET TESTED</span><h2 id="next-question">Next iteration</h2>
-          <div className="mission-next-ideas">
-            <div><h3>Support independent retries</h3><p>For children aged 5–6, add replayable spoken instructions, spoken feedback, and a visual clue to reduce reliance on reading. Test whether children can reconsider without step-by-step adult explanation, while keeping room for their own thinking.</p></div>
-            <div><h3>Make progress meaningful</h3><p>Explore a playground that takes shape as tasks are completed. Test whether children understand the progress, rather than simply enjoy the animation.</p></div>
-          </div>
-          <p className="mission-disclosure">Existing Canva screens with draft design rationale. No learner outcomes are claimed. Audio behavior and prototype navigation have not been verified here.</p>
-        </section>
-        <a className="project-back curriculum-return" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From Observation to Design</a>
-      </main>
-      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/#contact">Contact</a></footer>
-    </>
-  );
+      <figure className={styles.cover}><img src="/truck-mission-cover.png" alt="Truck Mission asks children which machine can dig a hole, with excavator, dump truck and crane choices" width={2050} height={1153} fetchPriority="high" /><figcaption>Level 1 · Original Canva design</figcaption></figure>
+      <section className={styles.section} aria-labelledby="role-title"><div className={styles.sectionLabel}><span>01</span><h2 id="role-title">My Role</h2></div><div className={styles.sectionBody}><p>I designed the learning tasks and feedback in Canva, then used AI-assisted development to create a standalone web game. My focus was connecting learning goals with choices, explanations, and opportunities to retry.</p></div></section>
+      <section className={styles.section} aria-labelledby="features-title"><div className={styles.sectionLabel}><span>02</span><h2 id="features-title">Key Product Features</h2></div><div className={styles.sectionBody}><div className={styles.goals} aria-label="Level 1 learning tasks"><div><strong>Dig</strong><span>Excavator</span></div><div><strong>Carry</strong><span>Dump truck</span></div><div><strong>Lift</strong><span>Crane</span></div></div><p className={styles.featureSummary}>Three tasks, choice-specific feedback, retries, task progression, and replayable browser narration.</p><dl className={styles.levels} aria-label="Level development status"><div><dt>Level 1</dt><dd>Playable prototype · Basic machine functions</dd></div><div><dt>Level 2</dt><dd>Planned · Scope not yet defined</dd></div><div><dt>Level 3</dt><dd>Planned · Scope not yet defined</dd></div></dl></div></section>
+      <div className={styles.screens}><figure><img src="/truck-mission-success.png" alt="Correct-choice feedback explains that the excavator uses its bucket to dig" width={2050} height={1153} loading="lazy" /><figcaption>Explain why the choice fits.</figcaption></figure><figure><img src="/truck-mission-retry.png" alt="Crane feedback explains that a crane lifts rather than digs, with a Try Again button" width={2050} height={1153} loading="lazy" /><figcaption>Explain the mismatch and invite a retry.</figcaption></figure></div>
+      <section className={styles.section} aria-labelledby="thinking-title"><div className={styles.sectionLabel}><span>03</span><h2 id="thinking-title">Product Thinking</h2></div><div className={styles.sectionBody}><dl className={styles.decisions}>{decisions.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl></div></section>
+      <section className={styles.section} aria-labelledby="implementation-title"><div className={styles.sectionLabel}><span>04</span><h2 id="implementation-title">Technical Implementation</h2></div><div className={styles.sectionBody}><p>Canva prototype to standalone HTML, CSS, and JavaScript game, built with AI assistance. Original PDF exports preserve the artwork; JavaScript connects choices, feedback, and navigation. Audio uses browser speech synthesis.</p><dl className={styles.iterations}><div><dt>What changed</dt><dd>Restored the illustrated layout, replaced blurry previews with original exports, and aligned clickable areas to the visible buttons.</dd></div></dl><div className={styles.implementationLinks}><a href="https://www.canva.com/d/MA8OFJhvKcPcvTT" target="_blank" rel="noreferrer">View Canva prototype<ArrowUpRight size={16} aria-hidden="true" /></a><span className={styles.localStatus}>Web game: local prototype · Public link pending</span></div></div></section>
+      <section className={styles.section} aria-labelledby="feedback-title"><div className={styles.sectionLabel}><span>05</span><h2 id="feedback-title">Feedback & Next Steps</h2></div><div className={styles.sectionBody}><div className={styles.evaluation}><div><h3>Checked</h3><p>Nine answer-to-feedback mappings and source-image button coordinates passed code checks.</p></div><div><h3>Not yet tested</h3><p>No learner feedback collected. Independent play, learning outcomes, and cross-device audio remain unverified.</p></div></div><p className={styles.nextTest}><strong>Next:</strong> Complete a browser walkthrough, then observe first choices, retries, and adult help during a short play session.</p></div></section>
+      <a className={`project-back ${styles.return}`} href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to selected work</a>
+    </main>
+    <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/#contact">Contact</a></footer>
+  </>;
 }

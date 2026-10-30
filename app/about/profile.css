@@ -1,0 +1,47 @@
+.identity-brand-row{display:flex;align-items:center;gap:24px}
+.education-marks{display:flex;align-items:center;gap:18px;padding-left:20px;border-left:1px solid var(--border);flex-shrink:0}
+.education-marks>a{position:relative;display:flex;align-items:center;justify-content:center;width:44px;height:44px}
+.education-marks img{display:block;max-width:100%;height:34px;object-fit:contain}
+.education-tooltip{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);padding:6px 9px;background:var(--foreground);color:#fff;font-size:12px;line-height:1.4;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;z-index:10}
+.education-marks a:hover .education-tooltip,.education-marks a:focus-visible .education-tooltip{opacity:1;visibility:visible}
+.profile-site-header .brand{letter-spacing:0}
+.profile-site-header .identity{min-width:0}
+.profile-page.wrap{width:min(1100px,calc(100% - 112px));padding-top:24px;padding-bottom:64px}
+.profile-page h1,.profile-page h2,.profile-page h3,.profile-page .eyebrow{letter-spacing:0}
+.profile-intro{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:64px;align-items:center;margin:44px 0 48px}
+.profile-page figure{margin:0;min-width:0}
+.profile-portrait img{display:block;width:100%;height:auto;aspect-ratio:2/3}
+.profile-page figcaption{font-size:12px;line-height:1.5;padding-top:10px;color:var(--foreground)}
+.profile-page .eyebrow{font-size:12px;color:var(--primary);line-height:1.5;font-weight:700}
+.profile-story h1{font-size:52px;line-height:1.1;max-width:100%;width:auto;margin:16px 0 22px;text-wrap:initial}
+.profile-story .profile-lead{font-family:Georgia,'Times New Roman',serif;font-size:27px;line-height:1.3;margin-bottom:24px}
+.profile-story>p:not(.profile-lead){font-size:17px;line-height:1.75;margin-top:16px}
+.profile-links{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:26px}
+.profile-page .text-link{display:inline-flex;align-items:center;gap:10px;font-size:15px;line-height:1.6}
+.profile-intentions{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:38px 0 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.profile-intentions h2{font-size:28px;line-height:1.25;margin:12px 0 18px}
+.profile-intentions p{font-size:17px;line-height:1.75;max-width:480px}
+.profile-section,.profile-moments{padding-top:58px}
+.profile-section-heading{margin-bottom:30px}
+.profile-section-heading h2{font-size:34px;line-height:1.2;margin-top:12px}
+.profile-timeline article{display:grid;grid-template-columns:180px minmax(0,1fr);gap:34px;padding:26px 0;border-top:1px solid var(--border)}
+.profile-date{font-size:14px;padding-top:4px}
+.profile-timeline h3,.profile-education h3{font-size:25px;line-height:1.3;margin:0}
+.profile-organization{font-size:15px;margin-top:8px;font-weight:600}
+.profile-timeline article>div>p:last-child{font-size:16px;line-height:1.75;margin-top:12px;max-width:700px}
+.profile-education{display:grid;grid-template-columns:1fr 1fr;gap:44px;border-top:1px solid var(--border);padding-top:30px}
+.profile-education article{display:flex;gap:22px;align-items:flex-start;min-width:0}
+.profile-education article>img{object-fit:contain;width:56px;height:44px;flex-shrink:0;margin-top:4px}
+.profile-education p{font-size:16px;line-height:1.6;margin-top:10px}
+.profile-education span{display:block;font-size:14px;margin-top:14px}
+.profile-photo-pair{display:grid;grid-template-columns:1fr 1.12fr;gap:28px;align-items:start}
+.profile-photo-pair img{display:block;width:100%;height:auto}
+.profile-page .profile-campus-photo{width:min(100%,800px);margin:36px auto 0}
+.profile-campus-photo img{display:block;width:100%;height:auto}
+.profile-closing{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--border);padding-top:28px;margin-top:52px}
+.profile-closing>p{font-family:Georgia,'Times New Roman',serif;font-size:25px;line-height:1.3}
+@media(max-width:1150px){.profile-site-header{flex-wrap:wrap;row-gap:22px}.profile-site-header nav{margin-left:auto}.profile-site-header .identity-line{max-width:520px}.identity-brand-row{gap:18px}.education-marks{gap:14px;padding-left:18px}.profile-intro{gap:40px}.profile-page.wrap{width:calc(100% - 64px)}}
+@media(max-width:800px){.profile-site-header nav{margin-left:0}.profile-intro{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;align-items:start}.profile-story h1{font-size:40px}.profile-story .profile-lead{font-size:24px}.profile-story>p:not(.profile-lead){font-size:16px}.profile-intentions{gap:30px}.profile-education{grid-template-columns:1fr;gap:30px}.profile-timeline article{grid-template-columns:140px minmax(0,1fr);gap:24px}}
+@media(max-width:600px){.profile-page.wrap{width:calc(100% - 40px)}.profile-intro{grid-template-columns:1fr;margin:30px 0 40px;gap:20px}.profile-story{display:contents}.profile-story>.eyebrow{order:0}.profile-story h1{order:1;font-size:40px;margin:0}.profile-story .profile-lead{order:2;margin:0}.profile-portrait{order:3;width:min(100%,400px);justify-self:center}.profile-story>p:not(.profile-lead){order:4;margin:0}.profile-links{order:5;margin-top:4px}.profile-intentions{grid-template-columns:1fr;gap:34px;padding:30px 0}.profile-intentions h2{font-size:26px}.profile-section,.profile-moments{padding-top:40px}.profile-section-heading h2{font-size:30px}.profile-timeline article{grid-template-columns:1fr;gap:10px;padding:22px 0}.profile-timeline h3,.profile-education h3{font-size:23px}.profile-photo-pair{grid-template-columns:1fr;gap:28px}.profile-closing{align-items:flex-start;flex-direction:column;gap:16px}.profile-closing>p{font-size:24px}}
+@media(max-width:540px){.profile-site-header .brand{font-size:40px}.identity-brand-row{gap:14px}.education-marks{gap:10px;padding-left:14px}.education-marks>a{width:34px;height:38px}.education-marks img{height:27px}.education-tooltip{left:auto;right:0;transform:none;font-size:11px}}
+@media(max-width:380px){.profile-site-header .brand{font-size:34px}.identity-brand-row{gap:10px}.education-marks{gap:8px;padding-left:10px}.education-marks>a{width:28px}.education-marks img{height:24px}}
