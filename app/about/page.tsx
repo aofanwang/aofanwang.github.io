@@ -46,7 +46,7 @@ export default function AboutPage() {
         <section className="profile-section" aria-labelledby="experience-title">
           <div className="profile-section-heading"><span className="eyebrow">EXPERIENCE</span><h2 id="experience-title">Learning from practice.</h2></div>
           <div className="profile-timeline">
-            <article><p className="profile-date">Sep 2026–Present</p><div><h3>Preschool Teacher</h3><p className="profile-organization">Stepping Stones</p><p>Working with preschool learners, bringing daily observation into learning experiences and classroom communication.</p></div></article>
+            <article><p className="profile-date">Sep 2026–Present</p><div><h3>Teacher</h3><p className="profile-organization">Stepping Stones</p><p>Working with preschool learners, bringing daily observation into learning experiences and classroom communication.</p></div></article>
             <article><p className="profile-date">Jul 2025–Jul 2026</p><div><h3>Teacher</h3><p className="profile-organization">Stanford Madera Grove Children’s Center · ICRI</p><p>Designed and adapted play-based experiences through observation of children’s interests, participation, and developmental needs.</p></div></article>
             <article><p className="profile-date">2024–2026</p><div><h3>Research Assistant</h3><p className="profile-organization">University of Michigan · Drake Lab &amp; GRIP Lab</p><p>Contributed to literature reviews, analysis of teacher feedback, and mixed-methods research on educational experiences and contexts.</p></div></article>
           </div>
