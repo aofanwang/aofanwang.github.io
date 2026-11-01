@@ -17,7 +17,7 @@ export default function AboutPage() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/about" aria-current="page">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a>
+          <a href="/">Home</a><a href="/about" aria-current="page">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/contact">Contact</a>
         </nav>
       </header>
       <main id="about-main" className="wrap profile-page">
@@ -68,9 +68,8 @@ export default function AboutPage() {
           </div>
           <figure className="profile-campus-photo"><img src="/about/michigan-stadium.jpg" alt="Aofan Wang standing on the field in front of maize-and-blue stadium seating" width={1320} height={956} loading="lazy" /><figcaption>A moment at Michigan</figcaption></figure>
         </section>
-        <div className="profile-closing"><p>Let’s make learning meaningful.</p><a className="text-link" href="mailto:aofanw@umich.edu">Get in touch <ArrowUpRight size={18} aria-hidden="true" /></a></div>
       </main>
-      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/#contact">Contact</a></footer>
+      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/contact">Contact</a></footer>
     </>
   );
 }

@@ -71,7 +71,7 @@ export default function CourseProject() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a>
+          <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/contact">Contact</a>
         </nav>
       </header>
       <main id="project-main" className="wrap curriculum-page">
@@ -106,7 +106,7 @@ export default function CourseProject() {
         </section>
         <a className="project-back curriculum-return" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />Back to course projects</a>
       </main>
-      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/#contact">Contact</a></footer>
+      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/contact">Contact</a></footer>
     </>
   );
 }

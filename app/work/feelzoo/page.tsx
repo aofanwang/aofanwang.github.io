@@ -23,7 +23,7 @@ export default function FeelZooPage() {
           <a className="brand" href="/">Aofan Wang</a>
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
-        <nav aria-label="Main navigation"><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/#contact">Contact</a></nav>
+        <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/contact">Contact</a></nav>
       </header>
       <main id="project-main" className="wrap curriculum-page feelzoo-page">
         <a className="project-back" href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to selected work</a>
@@ -54,7 +54,7 @@ export default function FeelZooPage() {
         </section>
         <a className="project-back curriculum-return" href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to selected work</a>
       </main>
-      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/#contact">Contact</a></footer>
+      <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/contact">Contact</a></footer>
     </>
   );
 }

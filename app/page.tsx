@@ -1,33 +1,30 @@
 import { ArrowUpRight, ArrowRight, BookOpen, Code2 } from 'lucide-react';
 import MoreWork from '../components/more-work';
 import EducationMarks from '../components/education-marks';
+import ContactFooter from '../components/contact-footer';
 import './about/profile.css';
-export default function Home(){return <><a className="skip" href="#main">Skip to content</a><header className="wrap header profile-site-header"><div className="identity"><div className="identity-brand-row"><a href="#" className="brand">Aofan Wang</a><EducationMarks /></div><p className="identity-line">Educator · Learning designer · Researcher · Builder</p></div><nav aria-label="Main navigation"><a href="/about">About Me</a><a href="#work">Projects</a><a href="#contact">Contact</a></nav></header><main id="main">
+export default function Home(){return <><a className="skip" href="#main">Skip to content</a><header className="wrap header profile-site-header"><div className="identity"><div className="identity-brand-row"><a href="#" className="brand">Aofan Wang</a><EducationMarks /></div><p className="identity-line">Educator · Learning designer · Researcher · Builder</p></div><nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="#work">Projects</a><a href="/contact">Contact</a></nav></header><main id="main">
 <section id="about" className="wrap hero hero-compact" aria-labelledby="hero-heading"><div className="hero-photo portrait-refined"><img src="/aofan-portrait-soft.png" alt="Aofan Wang wearing a yellow shirt against a soft ivory background" width="1122" height="1402" fetchPriority="high" /></div><div className="hero-copy"><h1 id="hero-heading">I design how people learn.</h1><div className="intro"><p>I turn observations into learning experiences, research into design decisions, and ideas into digital possibilities.</p><p>Grounded in education and psychology. Exploring what’s next with instructional design and AI-assisted building.</p><a className="more-about-link" href="/about">More about me <ArrowUpRight size={18} aria-hidden="true" /></a></div></div></section>
 <div id="work" />
 <section id="learning-design" className="wrap case-studies" aria-labelledby="case-studies-title">
   <div className="case-studies-heading"><span className="eyebrow">01 / HIGHLIGHTED PROJECTS</span><h2 id="case-studies-title">Curiosity, made tangible.</h2></div>
   <div className="case-study-list">
-    <article className="case-study" id="truck-mission">
+    <a className="case-study case-study-link" id="truck-mission" href="/work/from-curiosity-to-curriculum/truck-lesson/level-one" aria-labelledby="truck-mission-title">
       <div className="case-study-image truck-feature-image"><img src="/truck-mission-cover.png" alt="Truck Mission game screen: choose an excavator, dump truck or crane to dig a hole for playground slides" width="2050" height="1153" loading="lazy" /></div>
       <div className="case-study-copy">
-        <span className="case-study-category">INTERACTIVE LEARNING DESIGN</span>
-        <h3>Truck Mission</h3>
+        <h3 id="truck-mission-title">Truck Mission</h3>
         <p>A construction-themed learning game for children aged 5–6, connecting machine functions with purposeful tasks.</p>
         <div className="case-study-tags"><span>Learning game</span><span>Interaction design</span></div>
-        <a className="project-link" href="/work/from-curiosity-to-curriculum/truck-lesson/level-one">View case study <ArrowRight size={18} aria-hidden="true" /></a>
       </div>
-    </article>
-    <article className="case-study" id="feelzoo">
+    </a>
+    <a className="case-study case-study-link" id="feelzoo" href="/work/feelzoo" aria-labelledby="feelzoo-title">
       <div className="case-study-image"><img src="/feelzoo-cover.png" alt="FeelZoo concept cover with a friendly smiling character" width="800" height="600" loading="lazy" /></div>
       <div className="case-study-copy">
-        <span className="case-study-category">DIGITAL LEARNING DESIGN</span>
-        <h3>FeelZoo · social emotional learning</h3>
+        <h3 id="feelzoo-title">FeelZoo · social emotional learning</h3>
         <p>A playful learning concept helping children notice, name, and navigate big feelings.</p>
         <div className="case-study-tags"><span>Social-emotional learning</span><span>Prototyping</span></div>
-        <a className="project-link" href="/work/feelzoo">View case study <ArrowRight size={18} aria-hidden="true" /></a>
       </div>
-    </article>
+    </a>
   </div>
   <MoreWork>
     <div className="more-work-grid">
@@ -49,5 +46,5 @@ export default function Home(){return <><a className="skip" href="#main">Skip to
   </MoreWork>
 </section>
 <section id="approach" className="wrap approach"><div className="section-head"><div><span className="eyebrow">02 / HOW I WORK</span><h2>Start with people.<br/>Keep learning.</h2></div><p>Classroom instincts.<br/>Research discipline. Design intent.</p></div><div className="principles">{[['01','Observe before designing','Pay attention to what people do, what they need, and where they get stuck.'],['02','Make learning intentional','Connect learner needs to clear goals, meaningful activities, and accessible experiences.'],['03','Build to learn','Make ideas tangible, gather evidence, and use what it reveals to guide the next version.']].map(([n,t,p])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></section>
-<section id="lab" className="wrap exploring" aria-labelledby="exploring-title"><h2 id="exploring-title">Currently exploring</h2><div className="exploring-projects"><article><h3><Code2 size={18} aria-hidden="true"/>AI Curriculum Planner</h3><p>Early ideas for turning classroom observations into curriculum planning support.</p></article><article><h3><BookOpen size={18} aria-hidden="true"/>New Teacher Onboarding</h3><p>A planned scenario-based experience for toddler behavior guidance.</p></article></div></section>
-<section className="wrap closing" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Contact</h2><p><a href="mailto:aofanw@umich.edu">aofanw@umich.edu</a></p><p><a href="https://www.linkedin.com/in/aofan-wang-01a046326/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></section></main><footer className="wrap"><span>© 2026 Aofan Wang</span><span>Learning design · Research · Creative technology</span><a href="#">Back to top ↑</a></footer></>}
+<section id="lab" className="wrap exploring" aria-labelledby="exploring-title"><h2 id="exploring-title">03 / CURRENTLY EXPLORING</h2><div className="exploring-projects"><article><h3><Code2 size={18} aria-hidden="true"/>AI Curriculum Planner</h3><p>Early ideas for turning classroom observations into curriculum planning support.</p></article><article><h3><BookOpen size={18} aria-hidden="true"/>New Teacher Onboarding</h3><p>A planned scenario-based experience for toddler behavior guidance.</p></article></div></section>
+</main><ContactFooter /></>}
