@@ -1,56 +1,58 @@
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import SensoryOrbit from './sensory-orbit';
+import styles from './sensory.module.css';
 
 export const metadata = { title: 'Sensory Table | Aofan Wang' };
 
 const environments = [
   {
-    title: 'Color & texture',
+    title: 'Color & Texture',
     story: '/work/from-curiosity-to-curriculum/sensory-table/color-and-texture',
     image: '/sensory-table.png',
     alt: 'Colored rice with wooden cups, scoops, tongs and natural materials',
     width: 1431,
     height: 1099,
     highlights: ['Sensory exploration', 'Fine motor', 'Child-led choices'],
-    description: 'A shared material paired with different tools invites scooping, transferring, grasping, and arranging. The design leaves room for children to choose how they engage rather than follow one prescribed task.',
+    description: 'A shared material with varied tools invites scooping, transferring, grasping, and arranging. Children can choose how they engage rather than follow one prescribed task.',
   },
   {
-    title: 'Insects & natural materials',
+    title: 'Insects & Natural Materials',
     image: '/sensory-table-insects.png',
     alt: 'Insect models, leaves, stones and scooping tools in a sensory tray',
     width: 1448,
     height: 1086,
     highlights: ['Observation', 'Comparing & grouping', 'Inquiry'],
-    description: 'Insect models and natural objects create opportunities to notice details, compare forms, and ask questions. Open-ended tools allow children to decide what to collect, examine, or group together.',
+    description: 'Insect models and natural objects invite noticing details, comparing forms, and asking questions. Open-ended tools leave children free to collect, examine, and group objects.',
   },
   {
-    title: 'Citrus & water',
+    title: 'Citrus & Water',
     image: '/sensory-table-citrus.png',
     alt: 'Citrus slices, leaves, bowls and tongs arranged in water',
     width: 1536,
     height: 1024,
     highlights: ['Everyday materials', 'Sensory comparison', 'Experimentation'],
-    description: 'Citrus, leaves, water, and containers bring everyday materials into a new context. The arrangement invites sensory comparison and experimentation with collecting, moving, and combining objects.',
+    description: 'Citrus, leaves, water, and containers bring everyday materials into a new context, inviting sensory comparison and experiments with collecting, moving, and combining objects.',
   },
   {
-    title: 'Sand & construction',
+    title: 'Sand & Construction',
     image: '/sensory-table-construction.png',
     alt: 'Toy construction vehicles, wooden blocks, ramps and scoops in sand',
     width: 1536,
     height: 1024,
     highlights: ['Construction', 'Problem-solving', 'Child-led challenges'],
-    description: 'Sand, vehicles, blocks, and ramps offer a setting for transporting, building, and changing a landscape. Flexible materials leave space for children to create a challenge and try different approaches.',
+    description: 'Sand, vehicles, blocks, and ramps invite transporting, building, and reshaping a landscape. Flexible materials leave space for children to create challenges and try different approaches.',
   },
   {
-    title: 'Ocean exploration',
+    title: 'Ocean Exploration',
     image: '/sensory-table-ocean.png',
     alt: 'Ocean animal models, shells, stones, containers and water tools',
     width: 1536,
     height: 1024,
     highlights: ['Sorting', 'Storytelling', 'Shared exploration'],
-    description: 'Shells, animal models, and containers offer entry points for collecting, comparing, and imaginative play. The shared ocean setting allows different kinds of exploration to happen alongside one another.',
+    description: 'Shells, animal models, and containers offer entry points for collecting, comparing, and imaginative play, allowing different kinds of exploration alongside one another.',
   },
   {
-    title: 'Light & color',
+    title: 'Light & Color',
     image: '/sensory-table-light.png',
     alt: 'Sunlight passing through colored transparent objects beside mirrors and fabrics',
     width: 1536,
@@ -74,36 +76,15 @@ export default function CourseProject() {
           <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
-      <main id="project-main" className="portfolio-content wrap curriculum-page">
+      <main id="project-main" className={`portfolio-content wrap curriculum-page ${styles.page}`}>
         <a className="project-back" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From Observation to Design</a>
-        <header className="curriculum-heading">
-          <span className="eyebrow">LEARNING EXPERIENCE DESIGN</span>
-          <h1>Sensory Table</h1>
+        <header className={styles.intro}>
+            <span className={`${styles.eyebrow} type-label`}>LEARNING ENVIRONMENT DESIGN</span>
+            <h1>Sensory Table</h1>
+            <p className={`${styles.tagline} type-lead`}>Materials invite. Children decide.</p>
+            <p>Exploring how materials, tools, and space create opportunities for curiosity, choice, and open-ended learning.</p>
         </header>
-        <section className="sensory-intro" aria-labelledby="sensory-intent">
-          <h2 id="sensory-intent">Designing invitations to explore</h2>
-          <p>I approach a sensory table as a learning environment: a deliberate combination of materials, tools, and space that invites children to explore in different ways. My focus is on offering meaningful choices, making possibilities visible, and leaving room for learners to shape the experience.</p>
-          <p>Across these six visualizations, I explore how changes in materials and arrangement can open up different forms of participation. The notes below describe the design intent, rather than measured learning outcomes.</p>
-          <p className="sensory-image-note">AI-generated visualizations. Light &amp; Color is a concept exploration that depends on suitable lighting conditions.</p>
-        </section>
-        <section className="sensory-gallery" aria-label="Sensory environment designs">
-          {environments.map((environment) => (
-            <figure className="sensory-example" key={environment.title}>
-              <div className="sensory-example-image">
-                <img src={environment.image} alt={environment.alt} width={environment.width} height={environment.height} loading="lazy" />
-              </div>
-              <figcaption>
-                <h3>{environment.title}</h3>
-                <ul className="sensory-highlights">
-                  {environment.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-                </ul>
-                <p>{environment.description}</p>
-                {environment.story && <a className="project-link" href={environment.story}>Read the design story<ArrowUpRight size={18} aria-hidden="true" /></a>}
-                {environment.concept && <span className="sensory-concept">Concept exploration</span>}
-              </figcaption>
-            </figure>
-          ))}
-        </section>
+        <SensoryOrbit environments={environments} />
         <a className="project-back curriculum-return" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />Back to course projects</a>
       </main>
       <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/contact">Contact</a></footer>
