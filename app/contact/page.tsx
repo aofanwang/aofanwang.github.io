@@ -19,7 +19,7 @@ export default function ContactPage() {
         </div>
         <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact" aria-current="page">Contact</a></nav>
       </header>
-      <main id="contact-main" className="wrap contact-page">
+      <main id="contact-main" className="portfolio-content wrap contact-page">
         <h1>Contact</h1>
         <p className="contact-intro">Let’s connect.</p>
         <div className="contact-methods">

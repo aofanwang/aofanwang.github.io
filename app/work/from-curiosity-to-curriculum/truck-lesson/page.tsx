@@ -12,10 +12,10 @@ export default function CourseProject() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/contact">Contact</a>
+          <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
-      <main id="project-main" className="wrap curriculum-page">
+      <main id="project-main" className="portfolio-content wrap curriculum-page">
         <a className="project-back" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From Observation to Design</a>
         <header className="curriculum-heading">
           <span className="eyebrow">LEARNING EXPERIENCE DESIGN</span>

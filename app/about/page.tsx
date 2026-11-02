@@ -17,10 +17,10 @@ export default function AboutPage() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/">Home</a><a href="/about" aria-current="page">About Me</a><a href="/#work">Work</a><a href="/#research">Research</a><a href="/contact">Contact</a>
+          <a href="/">Home</a><a href="/about" aria-current="page">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
-      <main id="about-main" className="wrap profile-page">
+      <main id="about-main" className="portfolio-content wrap profile-page">
         <a className="project-back" href="/"><ArrowLeft size={18} aria-hidden="true" />Back to home</a>
         <section className="profile-intro" aria-labelledby="profile-title">
           <figure className="profile-portrait">

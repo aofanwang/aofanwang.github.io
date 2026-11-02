@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Code2, Eye, Hand, Image as ImageIcon, MousePointer2, PencilRuler, Play, Shuffle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Code2, Eye, Hand, PencilRuler, Play } from 'lucide-react';
 import EducationMarks from '../../../../../components/education-marks';
 import ContactFooter from '../../../../../components/contact-footer';
 import '../../../../about/profile.css';
@@ -17,29 +17,48 @@ export default function LevelOne() {
       </div>
       <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a></nav>
     </header>
-    <main id="mission-main" className={styles.page}>
+    <main id="mission-main" className={`portfolio-content ${styles.page}`}>
       <header className={styles.heading}>
         <a className="project-back" href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to projects</a>
         <div className={styles.introLayout}>
           <div className={styles.introCopy}>
+            <p className={`${styles.category} type-meta`}>LEARNING EXPERIENCE DESIGN · EDUCATIONAL GAME</p>
             <h1>Truck Mission</h1>
-            <p className={`${styles.lead} type-lead`}>Choose a machine. Put it to work. Build a playground.</p>
-            <p>An interactive, play-based learning experience designed to help children aged 5–6 explore construction vehicles through guided challenges, hands-on interaction, and creative problem-solving.</p>
-            <a className={styles.playLink} href={gameUrl} target="_blank" rel="noopener noreferrer"><Play size={20} aria-hidden="true" />Play the Game<ArrowUpRight size={20} aria-hidden="true" /></a>
-            <p className={`${styles.facts} type-meta`}>Ages 5–6 <span aria-hidden="true">/</span> Individual play <span aria-hidden="true">/</span> Three playable levels</p>
+            <p className={`${styles.lead} type-lead`}>Choose. Build. Create.</p>
+            <p>A construction-themed learning game for children aged 5–6 that helps them recognize machine functions, apply their understanding through interactive tasks, and build a playground of their own.</p>
           </div>
           <div className={styles.introScreens} aria-label="Truck Mission game previews">
-            <figure><img src="/truck-mission-welcome.png" alt="Truck Mission welcome screen with construction vehicles and a Start button" width={2050} height={1153} /><figcaption>Welcome screen</figcaption></figure>
+            <figure><img src="/truck-mission-levels.jpg" alt="Choose your mission screen with three playable levels" width={1280} height={719} /><figcaption>Choose a mission</figcaption></figure>
             <figure><img src="/truck-mission-cover.png" alt="Level 1 asks children to choose a machine to dig a hole for a playground slide" width={2050} height={1153} /><figcaption>Level 1 · Choose a machine</figcaption></figure>
+            <figure><img src="/truck-mission-guidance.jpg" alt="Level 2 excavator task with marked digging and soil pile targets" width={1280} height={719} /><figcaption>Level 2 · Put it to work</figcaption></figure>
+            <figure><img src="/truck-mission-autonomy.jpg" alt="Level 3 playground design with equipment choices and color customization" width={1280} height={719} /><figcaption>Level 3 · Create a playground</figcaption></figure>
           </div>
         </div>
       </header>
 
+      <section className={styles.projectInfo} aria-label="Project information">
+        <div><h2 className="type-label">Overview</h2><p>Truck Mission is an interactive learning game that introduces young children to construction vehicles through progressive tasks. The experience moves from recognizing machine functions to applying that understanding in construction challenges and finally creating a playground design.</p></div>
+        <dl>
+          <dt className="type-label">Role</dt><dd>Learning Experience Design · UI/UX Design · AI-Assisted Development</dd>
+          <dt className="type-label">Tools</dt><dd>Canva · HTML · CSS · JavaScript · AI-assisted coding</dd>
+          <dt className="type-label">Project Type</dt><dd>Independent project · Playable web prototype</dd>
+        </dl>
+        <dl>
+          <dt className="type-label">Team</dt><dd>Aofan Wang</dd>
+          <dt className="type-label">My Contribution</dt><dd>Designed the learning progression, interaction flow, visual interface, and feedback system, then used AI-assisted development tools to turn the concept into a playable web game.</dd>
+        </dl>
+        <div className={styles.projectActions}>
+          <a className={styles.playLink} href={gameUrl} target="_blank" rel="noopener noreferrer"><Play size={20} aria-hidden="true" />Play the Game<ArrowUpRight size={20} aria-hidden="true" /></a>
+          <a className={styles.textLink} href="https://www.canva.com/d/MA8OFJhvKcPcvTT" target="_blank" rel="noopener noreferrer">View Canva Prototype<ArrowUpRight size={18} aria-hidden="true" /></a>
+          <p className={`${styles.facts} type-meta`}>Ages 5–6 <span aria-hidden="true">/</span> Individual play <span aria-hidden="true">/</span> Three playable levels</p>
+        </div>
+      </section>
+
       <section id="problem" className={`${styles.section} ${styles.problem}`} aria-labelledby="problem-title">
-        <h2 id="problem-title">The Problem</h2>
-        <p>Young children learn best through hands-on exploration, play, and meaningful interactions. However, traditional classroom activities do not always provide opportunities for children to independently explore concepts, make decisions, and receive immediate feedback.</p>
-        <p>Many digital learning experiences for preschoolers also rely on passive watching, text-heavy instructions, or repetitive interactions that may not align with young children's developing attention spans, early literacy skills, and need for active engagement.</p>
-        <p>This project explores how a play-based digital learning experience can support children's attention, independence, and problem-solving through intuitive visual guidance, interactive challenges, and progressively scaffolded learning activities.</p>
+        <h2 id="problem-title">From Curiosity to Problem-Solving</h2>
+        <p>Inspired by my classroom experience, I wanted to explore how children's interest in construction vehicles could become an opportunity for deeper learning.</p>
+        <p>While recognizing and naming vehicles can build foundational knowledge, children also need opportunities to apply what they know in meaningful situations.</p>
+        <p className={`${styles.designQuestion} type-lead`}>How might we help children move beyond recognition to make decisions, solve problems, and create something of their own?</p>
       </section>
 
       <section id="role" className={styles.section} aria-labelledby="role-title">
@@ -72,60 +91,57 @@ export default function LevelOne() {
         </ol>
         <div className={styles.rationale}>
           <h3>Design Rationale</h3>
-          <p>I structured the experience around progressively challenging tasks, moving from recognition to hands-on application and creative exploration. This scaffolding approach aims to build confidence while gradually increasing learner independence.</p>
+          <p>I scaffolded the tasks by gradually increasing their complexity, so children can build understanding before taking on more independent challenges.</p>
+          <p className={styles.tradeoff}><span className={styles.tradeoffLabel}>Trade-off:</span> A fixed progression provides guidance but may feel repetitive for children who already know the basics.</p>
         </div>
       </section>
 
       <section id="thinking" className={styles.section} aria-labelledby="thinking-title">
         <h2 id="thinking-title">Key Design Decisions</h2>
         <div className={styles.decisions}>
-          <div className={styles.decision}>
-            <div><h3 className={styles.decisionHeading}>Visual Guidance</h3><p>Preschoolers are still developing their reading skills and ability to sustain attention. I used highlighted targets, visual cues, and replayable audio instructions to draw attention to key actions and help children navigate the game with less reliance on text or adult guidance.</p></div>
+          <article className={styles.decision}>
+            <div>
+              <h3 className={styles.decisionHeading}>Feedback That Encourages Thinking</h3>
+              <p>Children need help understanding why a choice may not work, rather than simply being told it is wrong. I designed action-specific feedback, such as explaining that a crane lifts rather than digs, with retry opportunities so children can reconsider without being shown the correct vehicle.</p>
+              <p className={styles.tradeoff}><span className={styles.tradeoffLabel}>Trade-off:</span> Children who struggle after repeated attempts may need additional hints.</p>
+            </div>
             <figure className={styles.decisionFigure}>
               <div className={styles.annotatedScene}>
-                <img src="/truck-mission-guidance.jpg" alt="Level 2 shows marked Dig here and Soil pile targets beside the excavator bucket, with replayable audio at the top right" width={1280} height={720} loading="lazy" />
+                <img src="/truck-mission-retry.png" alt="Incorrect-choice feedback explains the crane's lifting function and provides a Try Again option" width={2050} height={1153} loading="lazy" />
+                <span className={`${styles.callout} ${styles.retryCallout}`} aria-hidden="true" />
+              </div>
+              <figcaption>Explain the choice, then offer a retry</figcaption>
+            </figure>
+          </article>
+          <article className={styles.decision}>
+            <div>
+              <h3 className={styles.decisionHeading}>Visual Guidance for Young Learners</h3>
+              <p>Developing reading skills can make text-heavy instructions difficult to follow. I used highlighted targets, visual cues, and replayable audio to make key actions easier to find and help children navigate with less reliance on reading or adult guidance.</p>
+            </div>
+            <figure className={styles.decisionFigure}>
+              <div className={styles.annotatedScene}>
+                <img src="/truck-mission-guidance.jpg" alt="Level 2 shows highlighted digging and soil-pile targets with a replayable audio button" width={1280} height={720} loading="lazy" />
                 <span className={`${styles.callout} ${styles.audioCallout}`} aria-hidden="true"><b>1</b></span>
                 <span className={`${styles.callout} ${styles.digCallout}`} aria-hidden="true"><b>2</b></span>
                 <span className={`${styles.callout} ${styles.soilCallout}`} aria-hidden="true"><b>2</b></span>
               </div>
               <figcaption><span>1</span> Replayable audio <span>2</span> Marked targets</figcaption>
             </figure>
-          </div>
-          <div className={styles.decision}>
-            <div><h3 className={styles.decisionHeading}>Scaffolding</h3><p>I structured the experience into three progressively challenging levels: Recognize → Apply → Create. This progression aims to build understanding before introducing more complex tasks, gradually supporting children's confidence and independence.</p></div>
+          </article>
+          <article className={styles.decision}>
+            <div>
+              <h3 className={styles.decisionHeading}>Meaningful Choice &amp; Learner Autonomy</h3>
+              <p>Children need room to make their own decisions, not only follow a predetermined answer. I designed equipment selection, color customization, and object placement so children can explore alternatives and take ownership of their playground design.</p>
+            </div>
             <figure className={styles.decisionFigure}>
               <div className={styles.annotatedScene}>
-                <img src="/truck-mission-levels.jpg" alt="Three-level selection screen with a consistent visual layout for meeting machines, operating them, and designing a playground" width={1280} height={720} loading="lazy" />
-                <span className={`${styles.callout} ${styles.levelsCallout}`} aria-hidden="true" />
-              </div>
-              <figcaption>Increasing challenge within a familiar interface</figcaption>
-            </figure>
-          </div>
-          <div className={styles.decision}>
-            <div><h3 className={styles.decisionHeading}>Learner Autonomy</h3><p>I incorporated meaningful choices by allowing children to select playground equipment, customize colors, and decide where to place objects. These open-ended interactions are intended to encourage exploration, creative thinking, and a sense of ownership over the learning experience.</p></div>
-            <figure className={styles.decisionFigure}>
-              <div className={styles.annotatedScene}>
-                <img src="/truck-mission-autonomy.jpg" alt="Level 3 playground customization screen with slide and swing options and four color choices" width={1280} height={720} loading="lazy" />
+                <img src="/truck-mission-autonomy.jpg" alt="Playground customization interface with equipment selection and color choices" width={1280} height={720} loading="lazy" />
                 <span className={`${styles.callout} ${styles.equipmentCallout}`} aria-hidden="true"><b>1</b></span>
                 <span className={`${styles.callout} ${styles.colorCallout}`} aria-hidden="true"><b>2</b></span>
               </div>
               <figcaption><span>1</span> Equipment choice <span>2</span> Color choice</figcaption>
             </figure>
-          </div>
-          <div className={`${styles.decision} ${styles.decisionCompact}`}>
-            <div><h3 className={styles.decisionHeading}>Immediate Feedback &amp; Error Recovery</h3><p>I designed immediate, action-specific feedback and opportunities to retry, allowing children to learn from incorrect choices without interrupting the learning experience.</p></div>
-            <div className={styles.feedbackPair}>
-              <figure className={styles.decisionFigure}><img src="/truck-mission-success.png" alt="Correct feedback explains that the excavator uses its bucket to dig" width={2050} height={1153} loading="lazy" /><figcaption>Explain the correct choice</figcaption></figure>
-              <figure className={styles.decisionFigure}><div className={styles.annotatedScene}><img src="/truck-mission-retry.png" alt="Incorrect-choice feedback explains the crane's function and provides a Try Again option" width={2050} height={1153} loading="lazy" /><span className={`${styles.callout} ${styles.retryCallout}`} aria-hidden="true" /></div><figcaption>Explain, then offer a retry</figcaption></figure>
-            </div>
-          </div>
-          <div className={`${styles.decision} ${styles.decisionCompact}`}>
-            <div><h3 className={styles.decisionHeading}>Visible Progress</h3><p>I incorporated visual completion indicators to help children track their progress, recognize completed tasks, and understand what remains to be done.</p></div>
-            <figure className={`${styles.decisionFigure} ${styles.progressFigure}`}>
-              <div className={styles.progressCrop}><img src="/truck-mission-completed.jpg" alt="Actual Level 3 completion indicator showing all three task boxes checked" width={1110} height={959} loading="lazy" /></div>
-              <figcaption>Three completed tasks, visible at a glance</figcaption>
-            </figure>
-          </div>
+          </article>
         </div>
       </section>
 
@@ -140,14 +156,6 @@ export default function LevelOne() {
         <div className={styles.toolGroup}>
           <p className="type-label">Tools &amp; Technologies</p>
           <ul className={styles.technologyTags} aria-label="Project tools and technologies">{technologies.map(tool => <li key={tool}>{tool}</li>)}</ul>
-        </div>
-        <div className={styles.iterationGroup}>
-          <p className="type-label">Iteration Highlights</p>
-          <div className={styles.iterationHighlights}>
-            <article><ImageIcon size={24} aria-hidden="true" /><h3>Visual Clarity</h3><p>Improved asset quality to create clearer and more consistent game visuals.</p></article>
-            <article><MousePointer2 size={24} aria-hidden="true" /><h3>Interaction Expansion</h3><p>Extended simple vehicle matching into interactive digging, carrying, lifting, and playground design challenges.</p></article>
-            <article><Shuffle size={24} aria-hidden="true" /><h3>Challenge Design</h3><p>Randomized choices for new questions and full-level replays to reduce position memorization, keeping choices stable during retries.</p></article>
-          </div>
         </div>
         <a className={`${styles.textLink} ${styles.developmentLink}`} href="https://www.canva.com/d/MA8OFJhvKcPcvTT" target="_blank" rel="noopener noreferrer">View Canva prototype<ArrowUpRight size={18} aria-hidden="true" /></a>
       </section>

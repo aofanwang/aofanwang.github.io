@@ -1,3 +1,4 @@
+/* Portfolio type contract. See docs/design-system.md before adding an exception. */
 :root{
   --font-editorial:Georgia,'Times New Roman',serif;
   --font-body:Arial,Helvetica,sans-serif;
@@ -11,63 +12,86 @@
   --type-meta:14px;
   --type-nav:16px;
   --type-action:17px;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --leading-title:1.1;
   --leading-heading:1.2;
+  --leading-subheading:1.25;
   --leading-body:1.65;
+  --leading-compact:1.5;
+  --tracking:0;
+  --text-body:var(--foreground);
+  --text-muted:var(--muted-foreground);
+  --text-accent:var(--primary);
+  --text-inverse:var(--primary-foreground);
   --measure-body:70ch;
   --space-heading:24px;
+  --space-subheading:14px;
+  --space-paragraph:20px;
+  --space-section:60px;
 }
 
-/* Scope the shared scale to portfolio pages, not the standalone game surfaces. */
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main){
-  font-family:var(--font-body);font-size:var(--type-body);font-weight:400;line-height:var(--leading-body);
+/* Opt in on portfolio main elements only; game surfaces and UI library stay independent. */
+.portfolio-site main.portfolio-content{
+  font-family:var(--font-body);font-size:var(--type-body);font-weight:var(--weight-regular);line-height:var(--leading-body);color:var(--text-body);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(h1,h2,h3,p,figcaption,dt,dd){letter-spacing:0}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) h1{
-  font-family:var(--font-editorial);font-size:var(--type-page);font-weight:400;line-height:1.1;max-width:100%;width:auto;text-wrap:initial;overflow-wrap:break-word;
+.portfolio-site main.portfolio-content :is(h1,h2,h3,h4,p,figcaption,dt,dd,a,li,summary,button){letter-spacing:var(--tracking)}
+.portfolio-site main.portfolio-content :is(h1,.type-page){
+  font-family:var(--font-editorial);font-size:var(--type-page);font-weight:var(--weight-regular);line-height:var(--leading-title);max-width:100%;width:auto;text-wrap:initial;overflow-wrap:break-word;
 }
-.portfolio-site #main .hero-copy h1{font-size:var(--type-home);max-width:56%}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) h2{
-  font-family:var(--font-editorial);font-size:var(--type-section);font-weight:400;line-height:var(--leading-heading);margin-bottom:var(--space-heading);
+.portfolio-site main.portfolio-content :is(h2,.type-section){
+  font-family:var(--font-editorial);font-size:var(--type-section);font-weight:var(--weight-regular);line-height:var(--leading-heading);margin-bottom:var(--space-heading);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) h3{
-  font-family:var(--font-body);font-size:var(--type-subsection);font-weight:600;line-height:1.25;margin-bottom:14px;
+.portfolio-site main.portfolio-content :is(h3,h4,.type-subsection){
+  font-family:var(--font-body);font-size:var(--type-subsection);font-weight:var(--weight-semibold);line-height:var(--leading-subheading);margin-bottom:var(--space-subheading);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) p{
-  font-family:var(--font-body);font-size:var(--type-body);font-weight:400;line-height:var(--leading-body);max-width:var(--measure-body);
+.portfolio-site main.portfolio-content :is(p,.type-body){
+  font-family:var(--font-body);font-size:var(--type-body);font-weight:var(--weight-regular);line-height:var(--leading-body);max-width:var(--measure-body);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) p :is(strong,b){font-weight:inherit}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) p em{font-family:inherit;font-weight:inherit;font-style:normal;color:inherit}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(.type-lead,.profile-lead,.feelzoo-lead,.contact-intro),
+.portfolio-site main.portfolio-content p+p{margin-top:var(--space-paragraph)}
+.portfolio-site main.portfolio-content p :is(strong,b){font-weight:inherit}
+.portfolio-site main.portfolio-content p em{font-family:inherit;font-weight:inherit;font-style:normal;color:inherit}
+.portfolio-site main.portfolio-content :is(.type-lead,.profile-lead,.feelzoo-lead,.contact-intro),
 .portfolio-site #main .intro p{
-  font-family:var(--font-body);font-size:var(--type-lead);font-weight:400;line-height:1.5;max-width:var(--measure-body);
+  font-family:var(--font-body);font-size:var(--type-lead);font-weight:var(--weight-regular);line-height:var(--leading-compact);max-width:var(--measure-body);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(figcaption,.type-meta,.type-label,.feelzoo-caption,.sensory-image-note,.profile-date,.profile-education span,.eyebrow,.case-study-category,.case-study-tags span,.sensory-highlights li,.sensory-concept){
-  font-family:var(--font-body);font-size:var(--type-meta);font-weight:400;line-height:1.5;
+.portfolio-site main.portfolio-content :is(figcaption,.type-meta,.type-label,.feelzoo-caption,.sensory-image-note,.profile-date,.profile-organization,.profile-education span,.eyebrow,.case-study-category,.case-study-tags span,.sensory-highlights li,.sensory-concept){
+  font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-regular);line-height:var(--leading-compact);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(.eyebrow,.type-label,.case-study-category){font-weight:500}
-.portfolio-site #about-main .profile-organization{font-size:var(--type-meta);font-weight:500;line-height:1.5}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) figcaption p{font-size:var(--type-meta);line-height:1.5}
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(.project-link,.project-back,.text-link,.more-about-link,summary,.type-action){
-  font-family:var(--font-body);font-size:var(--type-action);font-weight:400;line-height:1.5;
+.portfolio-site main.portfolio-content :is(.eyebrow,.type-label,.profile-organization){font-weight:var(--weight-medium)}
+.portfolio-site main.portfolio-content figcaption p{font-size:var(--type-meta);line-height:var(--leading-compact);margin-top:10px}
+.portfolio-site main.portfolio-content :is(.project-link,.project-back,.text-link,.more-about-link,.hero-link,summary,.type-action){
+  font-family:var(--font-body);font-size:var(--type-action);font-weight:var(--weight-regular);line-height:var(--leading-compact);
 }
-.portfolio-site :is(#main,#about-main,#project-main,#contact-main,#mission-main) :is(.curriculum-process,.profile-story,.sensory-intro) p+p{margin-top:20px}
-.portfolio-site #main #exploring-title{
-  font-family:var(--font-body);font-size:var(--type-meta);font-weight:500;line-height:1.5;margin-bottom:0;
+.portfolio-site main.portfolio-content :is(button,.button,.type-button){
+  font-family:var(--font-body);font-size:var(--type-action);font-weight:var(--weight-medium);line-height:var(--leading-compact);
 }
-.portfolio-site #main .more-work>summary h2{font-size:var(--type-subsection);margin:0}
-.portfolio-site #project-main .course-project h2{
-  font-family:var(--font-body);font-size:var(--type-subsection);font-weight:600;line-height:1.25;margin-bottom:18px;
-}
-.portfolio-site .header .brand{font-family:var(--font-editorial);font-size:var(--type-brand);font-weight:400;line-height:1.1;letter-spacing:0}
-.portfolio-site .header nav{font-family:var(--font-body);font-size:var(--type-nav);font-weight:400;line-height:1.5}
-.portfolio-site .identity-line{font-size:var(--type-meta);font-weight:400;letter-spacing:0}
-.portfolio-site footer{font-family:var(--font-body);font-size:var(--type-meta);font-weight:400;line-height:1.5}
-.portfolio-site .contact-footer :is(h2,a,span){font-family:var(--font-body);font-size:var(--type-meta);line-height:1.5}
-.portfolio-site .contact-footer h2{font-weight:600}
-.portfolio-site #contact-main .contact-methods strong{font-family:var(--font-body);font-size:var(--type-subsection);font-weight:600;line-height:1.25}
-.portfolio-site #contact-main .contact-methods span span{font-size:var(--type-body);font-weight:400;line-height:var(--leading-body)}
 
+/* Documented roles: display hero, compact disclosure, project tiles, and section eyebrow. */
+.portfolio-site #main .hero-copy h1{font-size:var(--type-home);max-width:56%}
+.portfolio-site main.portfolio-content .more-work>summary h2{font-size:var(--type-subsection);margin:0}
+.portfolio-site main.portfolio-content .course-project h2{
+  font-family:var(--font-body);font-size:var(--type-subsection);font-weight:var(--weight-semibold);line-height:var(--leading-subheading);margin-bottom:18px;
+}
+.portfolio-site main.portfolio-content #exploring-title{
+  font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-medium);line-height:var(--leading-compact);margin-bottom:0;
+}
+
+/* Shared chrome is intentionally outside the main content scope. */
+.portfolio-site .header .brand{font-family:var(--font-editorial);font-size:var(--type-brand);font-weight:var(--weight-regular);line-height:var(--leading-title);letter-spacing:var(--tracking)}
+.portfolio-site .header nav{font-family:var(--font-body);font-size:var(--type-nav);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
+.portfolio-site .identity-line,.portfolio-site .education-tooltip{font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
+.portfolio-site footer,.portfolio-site .contact-footer :is(h2,a,span){font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
+.portfolio-site .contact-footer h2{font-weight:var(--weight-semibold)}
+.portfolio-site main.portfolio-content .contact-methods strong{font-family:var(--font-body);font-size:var(--type-subsection);font-weight:var(--weight-semibold);line-height:var(--leading-subheading)}
+.portfolio-site main.portfolio-content .contact-methods span span{font-size:var(--type-body);font-weight:var(--weight-regular);line-height:var(--leading-body)}
+
+/* A single stepped scale avoids independent viewport-based sizes in components. */
 @media(max-width:1150px){:root{--type-brand:52px}}
-@media(max-width:800px){:root{--type-page:52px;--type-home:56px;--type-section:34px;--type-subsection:22px;--type-lead:21px;--space-heading:22px}}
-@media(max-width:540px){:root{--type-page:40px;--type-home:44px;--type-brand:40px;--type-section:30px;--type-subsection:21px;--type-body:17px;--type-lead:20px;--type-meta:13px;--type-nav:15px;--type-action:16px;--space-heading:20px}.portfolio-site #main .hero-copy h1{max-width:100%}}
+@media(max-width:800px){:root{--type-page:52px;--type-home:56px;--type-section:34px;--type-subsection:22px;--type-lead:21px;--space-heading:22px;--space-section:44px}}
+@media(max-width:540px){
+  :root{--type-page:40px;--type-home:44px;--type-brand:40px;--type-section:30px;--type-subsection:21px;--type-body:17px;--type-lead:20px;--type-meta:13px;--type-nav:15px;--type-action:16px;--space-heading:20px}
+  .portfolio-site #main .hero-copy h1{max-width:100%}
+}
 @media(max-width:380px){:root{--type-brand:34px}}

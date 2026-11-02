@@ -14,6 +14,9 @@ importers:
       '@shadcn/react':
         specifier: 0.3.0
         version: 0.3.0(@types/react@19.2.14)(react@19.2.6)
+      '@toon-format/toon':
+        specifier: ^4.4.0
+        version: 4.4.0
       class-variance-authority:
         specifier: 0.7.1
         version: 0.7.1
@@ -1437,6 +1440,9 @@ packages:
 
   '@tailwindcss/postcss@4.2.1':
     resolution: {integrity: sha512-OEwGIBnXnj7zJeonOh6ZG9woofIjGrd2BORfvE5p9USYKDCZoQmfqLcfNiRWoJlRWLdNPn2IgVZuWAOM4iTYMw==}
+
+  '@toon-format/toon@4.4.0':
+    resolution: {integrity: sha512-A6UcsVoWbNdhdLNhJbe6JpRlocmf/DZGG57fur3bd8oQtsjBaKWo2hHbOU2zTuy+byUmLIOyP1xJeitopCZzpQ==}
 
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
@@ -4523,6 +4529,8 @@ snapshots:
       '@tailwindcss/oxide': 4.2.1
       postcss: 8.5.28
       tailwindcss: 4.2.1
+
+  '@toon-format/toon@4.4.0': {}
 
   '@ts-morph/common@0.27.0':
     dependencies:
