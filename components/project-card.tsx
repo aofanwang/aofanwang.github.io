@@ -9,14 +9,14 @@ type ProjectCardProps = {
   description: string;
   cta: string;
   href?: string;
-  variant?: 'featured' | 'secondary';
+  action?: ReactNode;
   image?: { src: string; alt: string; width: number; height: number };
   visual?: ReactNode;
   imageNote?: string;
   children?: ReactNode;
 };
 
-export default function ProjectCard({ id, title, category, description, cta, href, variant = 'featured', image, visual, imageNote, children }: ProjectCardProps) {
+export default function ProjectCard({ id, title, category, description, cta, href, action, image, visual, imageNote, children }: ProjectCardProps) {
   const content = <>
     <div className={styles.image}>
       {image && <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" />}
@@ -31,7 +31,10 @@ export default function ProjectCard({ id, title, category, description, cta, hre
         <details className={`research-detail ${styles.disclosure}`}><summary className={styles.cta}>{cta}<ArrowRight size={18} aria-hidden="true" /></summary><div className="detail">{children}</div></details>}
     </div>
   </>;
-  const className = `${styles.card} ${styles[variant]}`;
-  return href ? <a id={id} className={className} href={href} aria-labelledby={`${id}-title`}>{content}</a> :
-    <article id={id} className={className} aria-labelledby={`${id}-title`}>{content}</article>;
+  if (href && action) return <article id={id} className={`${styles.card} ${styles.linkedCard}`} aria-labelledby={`${id}-title`}>
+    <a className={styles.mainLink} href={href} aria-labelledby={`${id}-title`}>{content}</a>
+    <div className={styles.action}>{action}</div>
+  </article>;
+  return href ? <a id={id} className={styles.card} href={href} aria-labelledby={`${id}-title`}>{content}</a> :
+    <article id={id} className={styles.card} aria-labelledby={`${id}-title`}>{content}</article>;
 }

@@ -1,0 +1,7 @@
+.preview{position:absolute;inset:0}
+.preview .transition{width:100%;height:100%;max-width:none;border-radius:0}
+.transition img{display:block;width:100%;height:100%;object-fit:contain}
+.sticker{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:9px 12px;border-radius:8px;background:var(--text-accent);color:var(--text-inverse);font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-medium);line-height:var(--leading-compact);transform:rotate(-4deg);box-shadow:0 2px 5px #20252a20;white-space:nowrap}
+.sticker:hover{color:var(--text-inverse);background:var(--text-accent)}
+.sticker:focus-visible{outline:2px solid var(--text-inverse);outline-offset:3px;box-shadow:0 0 0 6px var(--text-accent)}
+@media(prefers-reduced-motion:reduce),(hover:none),(pointer:coarse){.magnet>div{transform:none!important;will-change:auto!important}}

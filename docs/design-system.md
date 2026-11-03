@@ -17,7 +17,8 @@ copy their hardcoded typography into portfolio components.
 | Role / token | Desktop | Tablet <=800px | Mobile <=540px | Family / weight |
 | --- | --- | --- | --- | --- |
 | H1 / `--type-page` | 64px | 52px | 40px | Editorial / 400 |
-| Home hero / `--type-home` | 72px | 56px | 44px | Editorial / 400 |
+| Home hero / `--type-home` | 64px | 52px | 40px | Editorial / 400 |
+| Home first introduction / `--type-home-intro` | 20px | 20px | 19px | Body / 400 |
 | H2 / `--type-section` | 38px | 34px | 30px | Editorial / 400 |
 | H3, H4 / `--type-subsection` | 23px | 22px | 21px | Body / 600 |
 | Lead / `--type-lead` | 22px | 21px | 20px | Body / 400 |
@@ -88,16 +89,25 @@ token through its named component class.
 ## Intentional Compact Roles
 
 - Homepage display title uses `--type-home`; normal page titles use `--type-page`.
+- Homepage introduction uses a 1.55 line-height; its second paragraph uses the
+  regular body role and muted color. Headline-to-prose, paragraph, and link gaps
+  are 24px, 18px, and 22px. These rules are scoped to `#main .intro`.
+- The homepage header caps its brand at 52px while retaining the existing
+  40px/34px mobile scale. Above 1150px, a 349px by 70.4px minimum brand slot
+  preserves the original education-mark and navigation positions. Depth layers
+  inherit the brand font; other pages retain their original brand size.
+- Above 1150px the homepage hero retains its existing 454px layout height so
+  reducing prose does not resize the absolutely positioned portrait. Portrait
+  image, fit, masks, and positioning rules remain unchanged.
 - The brand has its own responsive size because it shares space with school marks.
-- Explore more work is a disclosure H2 at `--type-subsection`, still editorial.
 - Project-index tile H2 titles use the sans-serif subsection role.
 - Currently Exploring is a section-eyebrow H2 using the metadata role.
 - Footer contact labels are metadata-sized, semibold sans-serif, not large H2s.
 - Image captions remain metadata-sized even when containing paragraph elements.
-- Reusable ProjectCard H3 titles are editorial serif and regular weight:
-  featured uses the section-size token; secondary uses the subsection-size token.
-  Card CTAs use the action-size token and medium weight. Layout and variants live
-  in `components/project-card.module.css`; research uses a native disclosure.
+- All four Selected Projects use the same ProjectCard: editorial serif H3 titles
+  at the section-size token, regular weight, and action-sized medium-weight CTAs.
+  The shared layout lives in `components/project-card.module.css`; Teacher Research
+  keeps its native inline disclosure and always-visible `#research` anchor.
 - FeelZoo contribution-grid H3s use the existing lead-size token (22/21/20px)
   with the standard subsection family, weight, and line-height for a compact role.
 
@@ -113,7 +123,7 @@ Do not add main IDs to an allowlist: use `portfolio-content`. Do not apply it to
 games, embedded third-party UI, or preview canvases.
 
 Review all portfolio routes at desktop, tablet, and mobile widths; expand the
-homepage's more-work disclosure. Verify regular prose, heading sizes, lead and
+homepage's research details and test `#research`. Verify regular prose, heading sizes, lead and
 metadata roles, link/button type, wrapping, and zero horizontal overflow. Confirm
 the game has not opted into this scope and its source is unchanged. Run
 `git diff --check` and `vinext build` before reporting completion.

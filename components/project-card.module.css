@@ -1,8 +1,15 @@
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
-.secondaryGrid{padding:8px 0 30px;align-items:start}
 .card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:#fffcf6;scroll-margin-top:28px;transition:border-color .18s,transform .18s}
 .card:hover{border-color:#b5a697;color:var(--foreground)}
 a.card:hover{transform:translateY(-3px)}
+.linkedCard{position:relative}
+.linkedCard:hover{transform:translateY(-3px)}
+.mainLink{display:flex;flex:1;flex-direction:column;min-width:0;border-radius:inherit;color:inherit}
+.mainLink:hover{color:inherit}
+.mainLink:focus-visible{outline:2px solid var(--text-accent);outline-offset:-3px}
+.mainLink .cta{padding-right:104px;gap:8px}
+.mainLink:hover .cta svg{transform:translateX(4px)}
+.action{position:absolute;right:28px;bottom:18px}
 .image{position:relative;aspect-ratio:16/9;overflow:hidden;isolation:isolate;background:#edf1f1}
 .image>img{display:block;width:100%;height:100%;object-fit:contain}
 .copy{display:flex;flex-direction:column;flex:1;gap:12px;padding:26px 28px;min-width:0}
@@ -12,10 +19,6 @@ a.card:hover{transform:translateY(-3px)}
 .cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;color:var(--text-accent);font-size:var(--type-action);font-weight:var(--weight-medium);line-height:var(--leading-compact);margin-top:auto;padding-top:12px}
 .cta svg{flex-shrink:0;transition:transform .18s}
 a.card:hover .cta svg{transform:translateX(4px)}
-.secondary{border-radius:20px}
-.secondary .copy{padding:22px 24px;gap:10px}
-:global(.portfolio-site) main:global(.portfolio-content) .secondary .title{font-size:var(--type-subsection)}
-.secondary .image{aspect-ratio:2/1}
 .imageNote{position:absolute;bottom:10px;left:12px;background:#fffcf6ed;padding:2px 7px;color:var(--text-muted)}
 .disclosure{margin-top:auto;padding-top:12px}
 .disclosure>summary.cta{border:0;padding:0;margin:0;justify-content:flex-start;font-weight:var(--weight-medium)}
@@ -29,6 +32,7 @@ a.card:hover .cta svg{transform:translateX(4px)}
 .appScreens img:nth-child(2){transform:translateY(-12px) rotate(-2deg)}
 .appScreens img:nth-child(3){transform:translateY(-4px) rotate(2deg)}
 .appScreens img:nth-child(4){transform:translateY(14px) rotate(4deg)}
-@media(max-width:900px){.grid{gap:22px}.copy{padding:22px}.appScreens{gap:10px;padding:16px}}
-@media(max-width:700px){.grid{grid-template-columns:1fr;gap:24px}.copy,.secondary .copy{padding:22px}.secondaryGrid{max-width:100%}.appScreens{padding:18px 24px}}
-@media(prefers-reduced-motion:reduce){.card,.cta svg{transition:none}a.card:hover,a.card:hover .cta svg{transform:none}}
+@media(min-width:701px) and (max-width:1100px){.category{min-height:calc(var(--type-meta) * var(--leading-compact) * 2)}}
+@media(max-width:900px){.grid{gap:22px}.copy{padding:22px}.appScreens{gap:10px;padding:16px}.action{right:22px;bottom:14px}}
+@media(max-width:700px){.grid{grid-template-columns:1fr;gap:24px}.copy{padding:22px}.appScreens{padding:18px 24px}}
+@media(prefers-reduced-motion:reduce){.card,.cta svg{transition:none}a.card:hover,a.card:hover .cta svg,.linkedCard:hover,.mainLink:hover .cta svg{transform:none}}
