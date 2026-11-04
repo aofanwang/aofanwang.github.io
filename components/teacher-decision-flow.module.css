@@ -1,0 +1,23 @@
+.flow{margin-top:28px}
+.nodes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px;list-style:none;padding:0;margin:0}
+.nodes li{position:relative;min-width:0}
+.node{appearance:none;display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;min-height:164px;padding:18px 16px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text-body);font:inherit;text-align:left;cursor:pointer;transition:border-color .18s,background-color .18s,color .18s}
+.node .number,.node svg{color:var(--text-accent)}
+.node[aria-pressed="true"]{border-color:var(--text-accent);background:#b3311809;box-shadow:inset 0 2px 0 var(--text-accent)}
+.node:hover{border-color:var(--text-accent)}
+.node:focus-visible,.controls button:focus-visible{outline:2px solid var(--text-accent);outline-offset:4px}
+.connector{position:absolute;left:calc(100% + 5px);top:50%;transform:translateY(-50%);color:var(--text-accent)}
+.panel{border-top:1px solid var(--border);margin-top:28px;padding-top:24px;min-height:250px}
+.stepLabel{color:var(--text-accent);margin-bottom:10px}
+.explanation{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.explanation .label{color:var(--text-muted);margin-bottom:8px}
+.explanation .label+p{margin-top:0}
+.detail{animation:reveal-detail .2s ease-out}
+.controls{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:16px}
+.controls button{display:grid;place-items:center;width:44px;height:44px;padding:0;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--text-accent);cursor:pointer}
+.controls button:hover:not(:disabled){border-color:var(--text-accent)}
+.controls button:disabled{opacity:.35;cursor:default}
+@keyframes reveal-detail{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.nodes{gap:22px}.node{padding:14px 12px;min-height:188px}.connector{left:calc(100% + 2px)}}
+@media(max-width:700px){.nodes{grid-template-columns:1fr;gap:24px}.node{min-height:72px;flex-direction:row;align-items:center;gap:14px;padding:14px 16px}.node>span:last-child{flex:1}.connector{left:27px;top:calc(100% + 3px);transform:rotate(90deg)}.explanation{grid-template-columns:1fr;gap:20px}.panel{min-height:0}.controls{justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.node{transition:none}.detail{animation:none}}

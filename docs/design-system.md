@@ -101,19 +101,31 @@ token through its named component class.
   image, fit, masks, and positioning rules remain unchanged.
 - The brand has its own responsive size because it shares space with school marks.
 - Project-index tile H2 titles use the sans-serif subsection role.
-- Currently Exploring is a section-eyebrow H2 using the metadata role.
 - Footer contact labels are metadata-sized, semibold sans-serif, not large H2s.
 - Image captions remain metadata-sized even when containing paragraph elements.
 - All four Selected Projects use the same ProjectCard: editorial serif H3 titles
   at the section-size token, regular weight, and action-sized medium-weight CTAs.
-  The shared layout lives in `components/project-card.module.css`; Teacher Research
-  keeps its native inline disclosure and always-visible `#research` anchor.
+  The shared layout lives in `components/project-card.module.css`. Teacher Decision
+  Lab is explicitly a concept in development; its cover uses an illustrative
+  notebook-and-planning image, not a product screenshot or actual research notes.
+  The second card row reserves matching metadata space for the optional status
+  line on desktop; mobile cards keep their natural single-column spacing.
+  Historical Teacher Research lives separately at
+  `/projects/teacher-research`, linked by the preserved `#research` archive anchor.
+- `/projects` reuses the homepage's `ProjectGrid` with H2 card titles beneath
+  its H1. Projects navigation and project-return links use `/projects`; the old
+  `/work/from-curiosity-to-curriculum` overview is a static-compatible redirect,
+  not an index of nested routes. Sensory and Truck Mission keep their URLs.
 - FeelZoo contribution-grid H3s use the existing lead-size token (22/21/20px)
   with the standard subsection family, weight, and line-height for a compact role.
 
+The homepage's My Design Philosophy section uses the standard H2, sans-serif H3,
+and regular body roles. Its three principles retain red metadata-size numbers;
+the introduction precedes the compact desktop grid and mobile stack.
+
 No numbered prefixes in Truck Mission case-study headings or the homepage's
-three section labels. Game levels, interface annotations, and the three
-How I Work principle numbers remain.
+section labels. Game levels, interface annotations, and the three design
+philosophy principle numbers remain.
 
 ## Maintenance and QA
 
@@ -123,7 +135,19 @@ Do not add main IDs to an allowlist: use `portfolio-content`. Do not apply it to
 games, embedded third-party UI, or preview canvases.
 
 Review all portfolio routes at desktop, tablet, and mobile widths; expand the
-homepage's research details and test `#research`. Verify regular prose, heading sizes, lead and
+homepage's project destinations and test `#research`. Verify regular prose, heading sizes, lead and
 metadata roles, link/button type, wrapping, and zero horizontal overflow. Confirm
 the game has not opted into this scope and its source is unchanged. Run
 `git diff --check` and `vinext build` before reporting completion.
+
+## Motion and Concept Artifacts
+
+Homepage Selected Projects and My Design Philosophy use React Bits AnimatedContent
+for a one-time 12px scroll reveal. Hero and footer remain static. Content stays
+available without JavaScript; keyboard focus and reduced-motion changes reveal it
+immediately. No continuous motion or staggered card layout is introduced.
+
+Teacher Decision Lab's five-stage flow uses native buttons with pressed states,
+arrow/Home/End keyboard navigation, and previous/next controls. All nodes stay
+visible above the detail panel. CSS transitions are disabled for reduced motion;
+the proposed learning flow does not imply a completed or validated scenario.

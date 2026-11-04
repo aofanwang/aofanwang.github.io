@@ -12,8 +12,14 @@ a.card:hover{transform:translateY(-3px)}
 .action{position:absolute;right:28px;bottom:18px}
 .image{position:relative;aspect-ratio:16/9;overflow:hidden;isolation:isolate;background:#edf1f1}
 .image>img{display:block;width:100%;height:100%;object-fit:contain}
+.card[id="sensory-table"] .image>img{object-fit:cover;object-position:center 60%}
+.card[id="teacher-decision-lab"] .image>img{object-fit:cover;object-position:center 55%}
 .copy{display:flex;flex-direction:column;flex:1;gap:12px;padding:26px 28px;min-width:0}
 .category{color:var(--text-muted)}
+.status{color:var(--text-accent)}
+@media(min-width:701px){.card[id="sensory-table"] .category{margin-bottom:calc(var(--type-meta) * var(--leading-compact) + 12px)}}
+@media(min-width:701px) and (max-width:950px){.card:is([id="sensory-table"],[id="teacher-decision-lab"]) .title{min-height:calc(var(--type-section) * var(--leading-heading) * 2)}}
+.archive{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--text-muted);scroll-margin-top:30px}
 :global(.portfolio-site) main:global(.portfolio-content) .card .title{font-family:var(--font-editorial);font-size:var(--type-section);font-weight:var(--weight-regular);line-height:var(--leading-heading);margin:0}
 .copy>p{margin:0;color:var(--text-body)}
 .cta{display:flex;align-items:center;justify-content:flex-start;gap:10px;color:var(--text-accent);font-size:var(--type-action);font-weight:var(--weight-medium);line-height:var(--leading-compact);margin-top:auto;padding-top:12px}

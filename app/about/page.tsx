@@ -17,7 +17,7 @@ export default function AboutPage() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/">Home</a><a href="/about" aria-current="page">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
+          <a href="/">Home</a><a href="/about" aria-current="page">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
       <main id="about-main" className="portfolio-content wrap profile-page">
@@ -34,7 +34,7 @@ export default function AboutPage() {
             <p>I’m a Bay Area educator and researcher exploring how thoughtful design can make learning more meaningful.</p>
             <p>My work starts with real people: what draws them in, where they get stuck, and what helps them participate. Classroom practice and research shape how I approach curriculum, digital experiences, and interactive prototypes.</p>
             <p>With a background in education and psychology, I’m interested in the connection between how people learn and how we design for them.</p>
-            <div className="profile-links"><a href="/#work" className="text-link">Explore my work <ArrowUpRight size={18} aria-hidden="true" /></a><a className="text-link" href="/Aofan-Wang-Resume.pdf" target="_blank" rel="noreferrer">View my résumé <ArrowUpRight size={18} aria-hidden="true" /></a></div>
+            <div className="profile-links"><a href="/projects" className="text-link">Explore my work <ArrowUpRight size={18} aria-hidden="true" /></a><a className="text-link" href="/Aofan-Wang-Resume.pdf" target="_blank" rel="noreferrer">View my résumé <ArrowUpRight size={18} aria-hidden="true" /></a></div>
           </div>
         </section>
 

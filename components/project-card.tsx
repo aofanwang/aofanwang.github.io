@@ -4,8 +4,10 @@ import styles from './project-card.module.css';
 
 type ProjectCardProps = {
   id: string;
+  headingLevel?: 2 | 3;
   title: string;
   category: string;
+  status?: string;
   description: string;
   cta: string;
   href?: string;
@@ -16,7 +18,8 @@ type ProjectCardProps = {
   children?: ReactNode;
 };
 
-export default function ProjectCard({ id, title, category, description, cta, href, action, image, visual, imageNote, children }: ProjectCardProps) {
+export default function ProjectCard({ id, headingLevel = 3, title, category, status, description, cta, href, action, image, visual, imageNote, children }: ProjectCardProps) {
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
   const content = <>
     <div className={styles.image}>
       {image && <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" />}
@@ -25,7 +28,8 @@ export default function ProjectCard({ id, title, category, description, cta, hre
     </div>
     <div className={styles.copy}>
       <span className={`${styles.category} type-label`}>{category}</span>
-      <h3 id={`${id}-title`} className={styles.title}>{title}</h3>
+      {status && <span className={`${styles.status} type-meta`}>{status}</span>}
+      <Heading id={`${id}-title`} className={styles.title}>{title}</Heading>
       <p>{description}</p>
       {href ? <span className={styles.cta}>{cta}<ArrowRight size={18} aria-hidden="true" /></span> :
         <details className={`research-detail ${styles.disclosure}`}><summary className={styles.cta}>{cta}<ArrowRight size={18} aria-hidden="true" /></summary><div className="detail">{children}</div></details>}

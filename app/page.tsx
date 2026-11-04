@@ -1,25 +1,31 @@
-import { ArrowUpRight, BookOpen, Code2 } from 'lucide-react';
-import ProjectCard from '../components/project-card';
-import TruckMissionPreview, { TruckMissionPlayLink } from '../components/truck-mission-preview';
-import projectStyles from '../components/project-card.module.css';
+import { ArrowUpRight } from 'lucide-react';
+import ProjectGrid from '../components/project-grid';
+import AnimatedContent from '../components/react-bits/AnimatedContent';
 import EducationMarks from '../components/education-marks';
 import ContactFooter from '../components/contact-footer';
 import DepthBrand from '../components/depth-brand';
 import './about/profile.css';
-export default function Home(){return <><a className="skip" href="#main">Skip to content</a><header className="wrap header profile-site-header home-header"><div className="identity"><div className="identity-brand-row"><DepthBrand /><EducationMarks /></div><p className="identity-line">Educator · Learning designer · Researcher · Builder</p></div><nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="#work">Projects</a><a href="/contact">Contact</a></nav></header><main id="main" className="portfolio-content">
+export default function Home(){return <><a className="skip" href="#main">Skip to content</a><header className="wrap header profile-site-header home-header"><div className="identity"><div className="identity-brand-row"><DepthBrand /><EducationMarks /></div><p className="identity-line">Educator · Learning designer · Researcher · Builder</p></div><nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a></nav></header><main id="main" className="portfolio-content">
 <section id="about" className="wrap hero hero-compact" aria-labelledby="hero-heading"><div className="hero-photo portrait-refined"><img src="/aofan-portrait-soft.png" alt="Aofan Wang wearing a yellow shirt against a soft ivory background" width="1122" height="1402" fetchPriority="high" /></div><div className="hero-copy"><h1 id="hero-heading">I design how people learn.</h1><div className="intro"><p>I turn observations into learning experiences, research into design decisions, and ideas into digital possibilities.</p><p>Grounded in education and psychology. Exploring what’s next with instructional design and AI-assisted building.</p><a className="more-about-link" href="/about">More about me <ArrowUpRight size={18} aria-hidden="true" /></a></div></div></section>
 <div id="work" />
 <section id="learning-design" className="wrap case-studies" aria-labelledby="case-studies-title">
-  <div className="case-studies-heading"><span className="eyebrow">SELECTED PROJECTS</span><h2 id="case-studies-title">Curiosity, made tangible.</h2></div>
-  <div className={projectStyles.grid}>
-    <ProjectCard id="truck-mission" title="Truck Mission" category="LEARNING EXPERIENCE DESIGN · INTERACTIVE GAME" description="An interactive construction game where children recognize machine functions, apply their knowledge through challenges, and design a playground of their own." cta="View Design Process" href="/work/from-curiosity-to-curriculum/truck-lesson/level-one" visual={<TruckMissionPreview />} action={<TruckMissionPlayLink />} />
-    <ProjectCard id="feelzoo" title="FeelZoo" category="SEL · EDTECH · TEAM PROJECT" description="A playful SEL app concept that helps children explore emotions through interactive activities, reflection, and a customizable virtual zoo." cta="View Project" href="/work/feelzoo" visual={<div className={projectStyles.appScreens}><img src="/feelzoo-mood-buddies.png" alt="Original FeelZoo Mood Buddies interface" width={900} height={1200} loading="lazy" /><img src="/feelzoo-emotion-matching.png" alt="Original Emotion Explorer matching activity" width={1024} height={1366} loading="lazy" /><img src="/feelzoo-sea-narios.png" alt="Original Sea-narios story and reflection activity" width={344} height={460} loading="lazy" /><img src="/feelzoo-your-zoo.png" alt="Original Your Zoo pet customization interface" width={752} height={1006} loading="lazy" /></div>} />
-      <ProjectCard id="sensory-table" title="Sensory Table" category="LEARNING ENVIRONMENT DESIGN" description="Exploring how materials, tools, and spatial choices support hands-on investigation and open-ended learning." cta="Explore Project" href="/work/from-curiosity-to-curriculum/sensory-table" image={{src:'/sensory-table.png',alt:'Sensory-table visualization with colored rice, bowls and scooping tools',width:1431,height:1099}} />
-      <ProjectCard id="research" title="Teacher Research" category="EDUCATIONAL RESEARCH · LEARNING INSIGHTS" description="Exploring instructional practices and teacher decision-making through educational research, data analysis, and synthesis." cta="Explore Research" image={{src:'/teacher-research-cover.png',alt:'Illustrative research cover: a notebook and annotated papers, not an actual research artifact',width:800,height:600}} imageNote="Illustrative cover">
-        <p>I combined cross-national survey and timing data with qualitative analysis. A custom AI agent supported comparison of linguistic shifts, themes, and version differences.</p><p>My contribution included organizing data, refining coding frameworks with the research team, and connecting teacher behavior with instructional design decisions.</p>
-      </ProjectCard>
-    </div>
+  <AnimatedContent distance={12} duration={0.45} threshold={0.05} initialOpacity={0.75} once>
+    <div className="case-studies-heading"><span className="eyebrow">SELECTED PROJECTS</span><h2 id="case-studies-title">Curiosity, made tangible.</h2></div>
+  </AnimatedContent>
+  <AnimatedContent distance={12} duration={0.5} threshold={0.03} initialOpacity={0.85} once><ProjectGrid /></AnimatedContent>
 </section>
-<section id="approach" className="wrap approach"><div className="section-head"><div><span className="eyebrow">HOW I WORK</span><h2>Start with people.<br/>Keep learning.</h2></div><p>Classroom instincts.<br/>Research discipline. Design intent.</p></div><div className="principles">{[['01','Observe before designing','Pay attention to what people do, what they need, and where they get stuck.'],['02','Make learning intentional','Connect learner needs to clear goals, meaningful activities, and accessible experiences.'],['03','Build to learn','Make ideas tangible, gather evidence, and use what it reveals to guide the next version.']].map(([n,t,p])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></section>
-<section id="lab" className="wrap exploring" aria-labelledby="exploring-title"><h2 id="exploring-title">CURRENTLY EXPLORING</h2><div className="exploring-projects"><article><h3><Code2 size={18} aria-hidden="true"/>AI Curriculum Planner</h3><p>Early ideas for turning classroom observations into curriculum planning support.</p></article><article><h3><BookOpen size={18} aria-hidden="true"/>New Teacher Onboarding</h3><p>A planned scenario-based experience for toddler behavior guidance.</p></article></div></section>
+<section id="approach" className="wrap approach" aria-labelledby="philosophy-title">
+  <AnimatedContent distance={12} duration={0.45} threshold={0.05} initialOpacity={0.75} once>
+  <header className="philosophy-heading">
+    <span className="eyebrow">MY DESIGN PHILOSOPHY</span>
+    <h2 id="philosophy-title">Learning happens through doing.</h2>
+    <p>I believe meaningful learning connects real challenges, thoughtful design, and opportunities to practice, reflect, and grow.</p>
+  </header>
+  <div className="principles">{[
+    ['01', 'Start with a Challenge', 'Begin with a meaningful problem learners need to understand or solve.'],
+    ['02', 'Understand the Context', 'Research learner needs, identify barriers, and explore where technology or AI can genuinely help.'],
+    ['03', 'Design for Practice', 'Create realistic scenarios, meaningful choices, and feedback that supports reflection and growth.'],
+  ].map(([number, title, description]) => <article key={number}><span className="type-meta">{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+  </AnimatedContent>
+</section>
 </main><ContactFooter /></>}

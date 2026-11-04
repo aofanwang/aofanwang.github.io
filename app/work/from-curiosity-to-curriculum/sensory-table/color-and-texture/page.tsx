@@ -12,7 +12,7 @@ export default function ColorAndTexture() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
+          <a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
       <main id="project-main" className="portfolio-content wrap curriculum-page">

@@ -73,11 +73,11 @@ export default function CourseProject() {
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">
-          <a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a>
+          <a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a>
         </nav>
       </header>
       <main id="project-main" className={`portfolio-content wrap curriculum-page ${styles.page}`}>
-        <a className="project-back" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />From Observation to Design</a>
+        <a className="project-back" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
         <header className={styles.intro}>
             <span className={`${styles.eyebrow} type-label`}>LEARNING ENVIRONMENT DESIGN</span>
             <h1>Sensory Table</h1>
@@ -85,7 +85,7 @@ export default function CourseProject() {
             <p>Exploring how materials, tools, and space create opportunities for curiosity, choice, and open-ended learning.</p>
         </header>
         <SensoryOrbit environments={environments} />
-        <a className="project-back curriculum-return" href="/work/from-curiosity-to-curriculum"><ArrowLeft size={18} aria-hidden="true" />Back to course projects</a>
+        <a className="project-back curriculum-return" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
       </main>
       <footer className="wrap"><span>© 2026 Aofan Wang</span><a href="/contact">Contact</a></footer>
     </>

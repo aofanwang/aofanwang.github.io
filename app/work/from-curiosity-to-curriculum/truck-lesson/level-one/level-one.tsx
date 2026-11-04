@@ -15,11 +15,11 @@ export default function LevelOne() {
         <div className="identity-brand-row"><a className="brand" href="/">Aofan Wang</a><EducationMarks /></div>
         <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
       </div>
-      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/#work">Projects</a><a href="/contact">Contact</a></nav>
+      <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a></nav>
     </header>
     <main id="mission-main" className={`portfolio-content ${styles.page}`}>
       <header className={styles.heading}>
-        <a className="project-back" href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to projects</a>
+        <a className="project-back" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to projects</a>
         <div className={styles.introLayout}>
           <div className={styles.introCopy}>
             <p className={`${styles.category} type-meta`}>LEARNING EXPERIENCE DESIGN · EDUCATIONAL GAME</p>
@@ -164,7 +164,7 @@ export default function LevelOne() {
         <h2 id="reflection-title">Reflection &amp; Next Steps</h2>
         <p>This project helped me explore how learning design principles can be translated into an interactive digital experience for young children.</p>
         <p>While the prototype has been reviewed for functionality, it has not yet been tested with children. My next step is to observe how children navigate the game, respond to feedback, and complete tasks independently, using these observations to guide future improvements.</p>
-        <a className={styles.textLink} href="/#work"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
+        <a className={styles.textLink} href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
       </section>
     </main>
     <ContactFooter />
