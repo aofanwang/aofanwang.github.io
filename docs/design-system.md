@@ -90,8 +90,10 @@ token through its named component class.
 
 - Homepage display title uses `--type-home` with a 1.14 line-height;
   normal page titles use `--type-page` unchanged.
-  Desktop sentences form separate lines when space permits, within the portrait
-  boundary and a 32px gap; tablet/mobile text wraps naturally.
+  Desktop sentences form separate lines when space permits. At >=1100px the
+  headline may use 66% of the container, including the portrait's empty left
+  margin, to keep the second sentence together without changing type size.
+  Narrower desktop, tablet and mobile text wraps naturally.
 - The single homepage introduction uses a 1.55 line-height. Headline-to-prose
   and prose-to-link gaps are 28px and 24px, scoped to `#main .intro`.
 - The homepage header caps its brand at 52px while retaining the existing
@@ -149,7 +151,14 @@ for one-time 20px fade-up reveals over 0.7 seconds, with 80ms neighboring-card a
 principle offsets. Mobile movement is capped at 12px without extra delays. The
 hero, portrait, brand and footer remain static. Entrance transforms belong to
 outer wrappers, preserving card hover, Magnet and Pixel Transition transforms.
-The Projects page uses the same grid without scroll animation.
+The Projects index now enables the same animated grid, with 80ms adjacent-card
+offsets. About, Contact, Teacher Decision Lab, Teacher Research, and the Color &
+Texture story reuse `CaseStudyReveal` for existing content groups. Its optional
+class name and child stagger preserve the existing grid/flex DOM where needed.
+About's intro/portrait and Contact's title stay immediately visible. Teacher
+Decision Lab reveals the entire interactive flow once, not its individual nodes.
+Sensory Table reveals only its introduction; the orbit and detail dialogs remain
+outside scroll-reveal wrappers and retain their independent motion and focus.
 
 Truck Mission and FeelZoo reuse these settings through `CaseStudyReveal` for
 section content, grouped image-and-explanation blocks, and short staggered

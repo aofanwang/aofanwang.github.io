@@ -1,6 +1,7 @@
 import EducationMarks from '../../components/education-marks';
 import ContactFooter from '../../components/contact-footer';
 import ProjectGrid from '../../components/project-grid';
+import CaseStudyReveal from '../../components/case-study-reveal';
 import '../about/profile.css';
 import styles from './projects.module.css';
 
@@ -20,8 +21,8 @@ export default function ProjectsPage() {
       <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects" aria-current="page">Projects</a><a href="/contact">Contact</a></nav>
     </header>
     <main id="projects-main" className={`portfolio-content wrap ${styles.page}`}>
-      <header className={styles.heading}><span className="eyebrow">SELECTED WORK</span><h1>Projects</h1></header>
-      <ProjectGrid headingLevel={2} />
+      <header className={styles.heading}><CaseStudyReveal><span className="eyebrow">SELECTED WORK</span><h1>Projects</h1></CaseStudyReveal></header>
+      <ProjectGrid headingLevel={2} animate />
     </main>
     <ContactFooter />
   </>;

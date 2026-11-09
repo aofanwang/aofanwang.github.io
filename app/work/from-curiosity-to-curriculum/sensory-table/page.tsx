@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import SensoryOrbit from './sensory-orbit';
+import CaseStudyReveal from '../../../../components/case-study-reveal';
 import styles from './sensory.module.css';
 
 export const metadata = { title: 'Sensory Table | Aofan Wang' };
@@ -78,12 +79,12 @@ export default function CourseProject() {
       </header>
       <main id="project-main" className={`portfolio-content wrap curriculum-page ${styles.page}`}>
         <a className="project-back" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
-        <header className={styles.intro}>
+        <CaseStudyReveal><header className={styles.intro}>
             <span className={`${styles.eyebrow} type-label`}>LEARNING ENVIRONMENT DESIGN</span>
             <h1>Sensory Table</h1>
             <p className={`${styles.tagline} type-lead`}>Materials invite. Children decide.</p>
             <p>Exploring how materials, tools, and space create opportunities for curiosity, choice, and open-ended learning.</p>
-        </header>
+        </header></CaseStudyReveal>
         <SensoryOrbit environments={environments} />
         <a className="project-back curriculum-return" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
       </main>

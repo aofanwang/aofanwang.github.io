@@ -1,6 +1,7 @@
 import { ArrowUpRight, Mail } from 'lucide-react';
 import EducationMarks from '../../components/education-marks';
 import ContactFooter from '../../components/contact-footer';
+import CaseStudyReveal from '../../components/case-study-reveal';
 import '../about/profile.css';
 
 export const metadata = {
@@ -22,10 +23,10 @@ export default function ContactPage() {
       <main id="contact-main" className="portfolio-content wrap contact-page">
         <h1>Contact</h1>
         <p className="contact-intro">Let’s connect.</p>
-        <div className="contact-methods">
+        <CaseStudyReveal className="contact-methods" stagger={0.08}>
           <a href="mailto:aofanw@umich.edu"><Mail size={24} aria-hidden="true" /><span><strong>Email</strong><span>aofanw@umich.edu</span></span><ArrowUpRight size={24} aria-hidden="true" /></a>
           <a href="https://www.linkedin.com/in/aofan-wang-01a046326/" target="_blank" rel="noopener noreferrer"><ArrowUpRight size={24} aria-hidden="true" /><span><strong>LinkedIn</strong><span>linkedin.com/in/aofan-wang-01a046326</span></span><ArrowUpRight size={24} aria-hidden="true" /></a>
-        </div>
+        </CaseStudyReveal>
       </main>
       <ContactFooter />
     </>

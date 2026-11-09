@@ -71,6 +71,7 @@
 /* Documented roles: display hero, compact disclosure, project tiles, and section eyebrow. */
 .portfolio-site #main .hero-copy h1{font-size:var(--type-home);line-height:1.14;max-width:min(calc(60% - 32px),850px);text-wrap:balance}
 .portfolio-site #main .hero-copy h1>span{display:block}
+@media(min-width:1100px){.portfolio-site #main .hero-copy h1{max-width:min(66%,850px)}}
 .portfolio-site #main .intro{padding-top:28px}
 .portfolio-site #main .intro p{font-size:var(--type-home-intro);font-weight:var(--weight-regular);line-height:1.55;color:var(--text-body)}
 .portfolio-site #main .intro p+p{font-size:var(--type-body);line-height:var(--leading-body);color:var(--text-muted);margin-top:18px}

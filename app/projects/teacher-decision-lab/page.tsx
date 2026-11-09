@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PortfolioProjectHeader from '../../../components/portfolio-project-header';
 import ContactFooter from '../../../components/contact-footer';
 import TeacherDecisionFlow from '../../../components/teacher-decision-flow';
+import CaseStudyReveal from '../../../components/case-study-reveal';
 import styles from './teacher-decision-lab.module.css';
 
 export const metadata = {
@@ -24,25 +25,31 @@ export default function TeacherDecisionLabPage() {
         <span className={`${styles.status} type-meta`}>Concept in Development</span>
       </header>
       <section className={styles.section} aria-labelledby="decision-problem">
+        <CaseStudyReveal>
         <p className={`${styles.eyebrow} type-label`}>THE PROBLEM · DESIGN HYPOTHESIS</p>
         <h2 id="decision-problem">Knowing the theory is not the same as knowing what to do.</h2>
         <p>New teachers may know general classroom management strategies but feel uncertain about how to respond when real situations become complicated. Because children, classrooms, and teaching styles differ, a single script may not fit every situation.</p>
         <p className={styles.question}>How might we help novice teachers practice professional judgment through realistic classroom decisions, contextual feedback, and reflection?</p>
         <h3>Learning Objective</h3>
         <p>Given a realistic classroom scenario, learners will compare possible responses, explain their reasoning, and reconsider their approach when new contextual information becomes available.</p>
+        </CaseStudyReveal>
       </section>
       <section className={styles.section} aria-labelledby="decision-flow">
+        <CaseStudyReveal>
         <h2 id="decision-flow">Interactive Learning Experience Flow</h2>
         <p className={`${styles.flowNote} type-meta`}>Proposed learning design · Five connected stages</p>
-        <TeacherDecisionFlow />
+        </CaseStudyReveal>
+        <CaseStudyReveal><TeacherDecisionFlow /></CaseStudyReveal>
       </section>
       <section className={styles.section} aria-labelledby="decision-philosophy">
+        <CaseStudyReveal>
         <p className={`${styles.eyebrow} type-label`}>DESIGN PHILOSOPHY &amp; NEXT STEPS</p>
         <h2 id="decision-philosophy">Teach the reasoning, not just the response.</h2>
         <p>Different classroom situations may call for different strategies. Rather than memorizing one perfect response, teachers should have opportunities to examine context, consider consequences, and reflect on their decisions.</p>
         <p className={`${styles.boundary} type-meta`}>Safety, child well-being, and professional responsibilities remain essential boundaries. Not every possible response is equally appropriate.</p>
         <h3>What&apos;s Next</h3>
         <p>The next stage is to design a small interactive classroom scenario and examine the instructional content with relevant educators. The concept has not yet been developed into a complete product or tested with learners.</p>
+        </CaseStudyReveal>
       </section>
     </main>
     <ContactFooter />
