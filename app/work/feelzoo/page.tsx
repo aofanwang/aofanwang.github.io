@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, CircleCheck, Coins, Eye, MessageCircle, Network, PencilRuler, Sprout, Target, ZoomIn } from 'lucide-react';
 import styles from './feelzoo.module.css';
+import CaseStudyReveal from '../../../components/case-study-reveal';
 
 export const metadata = {
   title: 'FeelZoo | Aofan Wang',
@@ -86,6 +87,7 @@ export default function FeelZooPage() {
         </section>
 
         <section className={styles.section} aria-labelledby="feelzoo-problem">
+          <CaseStudyReveal>
           <h2 id="feelzoo-problem">The Problem</h2>
           <p>Social-emotional learning goes beyond recognizing emotions. Children also need opportunities to understand their feelings, consider others&apos; perspectives, and explore how to respond to everyday situations.</p>
           <p>Our team explored how interactive digital activities could support these skills while providing teachers with accessible SEL learning resources.</p>
@@ -95,33 +97,41 @@ export default function FeelZooPage() {
             <article><h3>Teacher Support</h3><p>Making SEL activities easier to incorporate into classroom routines.</p></article>
           </div>
           <p className={`${styles.question} type-lead`}>How might we make emotional learning more interactive, reflective, and accessible for young learners?</p>
+          </CaseStudyReveal>
         </section>
 
         <section className={styles.section} aria-labelledby="feelzoo-role">
+          <CaseStudyReveal>
           <h2 id="feelzoo-role">My Design Contributions</h2>
           <p>Bringing together learning research, experience structure, and interaction design, I helped translate SEL learning goals into a structured digital experience.</p>
-          <div className={styles.roleGrid}>{contributions.map(({ title, text, icon: Icon }) => (
-            <article key={title}><Icon size={22} aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article>
+          </CaseStudyReveal>
+          <div className={styles.roleGrid}>{contributions.map(({ title, text, icon: Icon }, index) => (
+            <CaseStudyReveal key={title} delay={(index % 2) * 0.08}><article><Icon size={22} aria-hidden="true" /><div><h3>{title}</h3><p>{text}</p></div></article></CaseStudyReveal>
           ))}</div>
         </section>
 
         <section className={styles.section} aria-labelledby="feelzoo-research">
+          <CaseStudyReveal>
           <h2 id="feelzoo-research">Research &amp; Learning Design</h2>
           <div className={styles.researchGrid}>
             <article><h3>SEL &amp; Learning Research</h3><ul><li>CASEL&apos;s five core SEL competencies</li><li>Child development and learning theories</li><li>Scaffolding and active learning</li></ul></article>
             <article><h3>Competitive Exploration</h3><ul><li>ClassDojo</li><li>Smiling Mind</li><li>Sesame Workshop</li></ul><p className="type-meta">An exploratory review of opportunities for interactive learning and reflection, not a verified product comparison.</p></article>
           </div>
+          </CaseStudyReveal>
 
           <div className={styles.researchPart}>
+            <CaseStudyReveal>
             <h3>Learning Progression</h3>
             <ol className={styles.progression} aria-label="Recognize, Understand, Reflect and Respond">
               <li><Eye size={24} aria-hidden="true" /><h4>Recognize</h4><p>Identify and name emotions.</p><ArrowRight className={styles.arrow} size={20} aria-hidden="true" /></li>
               <li><MessageCircle size={24} aria-hidden="true" /><h4>Understand</h4><p>Connect emotions to feelings and situations.</p><ArrowRight className={styles.arrow} size={20} aria-hidden="true" /></li>
               <li><Sprout size={24} aria-hidden="true" /><h4>Reflect &amp; Respond</h4><p>Consider others&apos; perspectives and possible responses.</p></li>
             </ol>
+            </CaseStudyReveal>
           </div>
 
           <div className={styles.researchPart}>
+            <CaseStudyReveal>
             <div className={styles.subheadingRow}><h3>Information Architecture</h3><a className={styles.textLink} href={siteMap} target="_blank" rel="noopener noreferrer">Figma site map<ArrowUpRight size={16} aria-hidden="true" /></a></div>
             <div className={styles.architectureLayout}>
               <div className={styles.siteMap} role="group" aria-label="Simplified FeelZoo information architecture">
@@ -134,16 +144,19 @@ export default function FeelZooPage() {
               </div>
               <figure className={styles.dashboard}><img src="/feelzoo-activities.png" alt="Team dashboard concept showing activity completion, Your Zoo, and Animal Island" width={900} height={1200} loading="lazy" /><figcaption>Team dashboard concept</figcaption></figure>
             </div>
+            </CaseStudyReveal>
           </div>
         </section>
 
         <section className={styles.section} aria-labelledby="feelzoo-spotlight">
+          <CaseStudyReveal>
           <p className={`${styles.spotlightLabel} type-label`}>My individual interaction design</p>
           <h2 id="feelzoo-spotlight">Design Spotlight — Emotion Explorer</h2>
           <p className="type-lead">Learning through interaction, hints, and feedback.</p>
           <p>I designed Emotion Explorer to help children practice identifying emotional expressions through an interactive matching activity. The design includes drag-and-drop matching, optional hints, and feedback that encourages learners to reconsider their choices.</p>
+          </CaseStudyReveal>
           <div className={styles.spotlightGrid}>{spotlight.map((feature, index) => (
-            <figure key={feature.title}>
+            <CaseStudyReveal key={feature.title} delay={index * 0.08}><figure>
               <a className={styles.screenLink} href={feature.image} target="_blank" rel="noopener noreferrer" aria-label={`View full-size ${feature.title} design`}>
                 <div className={styles.screen}>
                   <img src={feature.image} alt={feature.alt} width={1024} height={1366} loading="lazy" />
@@ -153,10 +166,12 @@ export default function FeelZooPage() {
               </a>
               <figcaption><h3>{feature.title}</h3><p className="type-body">{feature.text}</p>{index === 1 && <p className="type-meta">1 · Explanatory feedback &nbsp; 2 · Optional hint</p>}</figcaption>
             </figure>
+            </CaseStudyReveal>
           ))}</div>
         </section>
 
         <section className={styles.section} aria-labelledby="feelzoo-rewards">
+          <CaseStudyReveal>
           <h2 id="feelzoo-rewards">Engagement &amp; Reward Design</h2>
           <p className="type-lead">Making learning progress visible and rewarding.</p>
           <ol className={`${styles.progression} ${styles.rewardFlow}`} aria-label="Complete Activities, Earn Zoo Tokens, Grow Your Zoo">
@@ -177,9 +192,11 @@ export default function FeelZooPage() {
               <figcaption>Original Figma prototype · Home (6:20). Sample balances illustrate the proposed system.</figcaption>
             </figure>
           </div>
+          </CaseStudyReveal>
         </section>
 
         <section className={`${styles.section} ${styles.reflection}`} aria-labelledby="feelzoo-reflection">
+          <CaseStudyReveal>
           <h2 id="feelzoo-reflection">Reflection &amp; Next Steps</h2>
           <p>Designing FeelZoo helped me connect educational research with interactive learning design, particularly through the use of scaffolding, feedback, and structured activities.</p>
           <p>One limitation is that facial expressions alone cannot fully explain emotions. The same expression may mean different things depending on the person and situation.</p>
@@ -188,6 +205,7 @@ export default function FeelZooPage() {
             <li><span>Contextual Learning:</span> Connect emotion recognition with realistic situations and multiple possible interpretations.</li>
             <li><span>Learner Testing:</span> Examine whether children understand the interactions, benefit from hints, and can apply learning beyond the matching activity.</li>
           </ul>
+          </CaseStudyReveal>
         </section>
         <a className="project-back curriculum-return" href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
       </main>

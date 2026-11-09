@@ -3,8 +3,8 @@
   --font-editorial:Georgia,'Times New Roman',serif;
   --font-body:Arial,Helvetica,sans-serif;
   --type-page:64px;
-  --type-home:64px;
-  --type-home-intro:20px;
+  --type-home:48px;
+  --type-home-intro:19px;
   --type-brand:64px;
   --type-section:38px;
   --type-subsection:23px;
@@ -69,11 +69,12 @@
 }
 
 /* Documented roles: display hero, compact disclosure, project tiles, and section eyebrow. */
-.portfolio-site #main .hero-copy h1{font-size:var(--type-home);max-width:min(56%,640px);text-wrap:balance}
-.portfolio-site #main .intro{padding-top:24px}
+.portfolio-site #main .hero-copy h1{font-size:var(--type-home);line-height:1.14;max-width:min(calc(60% - 32px),850px);text-wrap:balance}
+.portfolio-site #main .hero-copy h1>span{display:block}
+.portfolio-site #main .intro{padding-top:28px}
 .portfolio-site #main .intro p{font-size:var(--type-home-intro);font-weight:var(--weight-regular);line-height:1.55;color:var(--text-body)}
 .portfolio-site #main .intro p+p{font-size:var(--type-body);line-height:var(--leading-body);color:var(--text-muted);margin-top:18px}
-.portfolio-site #main .intro .more-about-link{margin-top:22px}
+.portfolio-site #main .intro .more-about-link{margin-top:24px}
 .portfolio-site main.portfolio-content .course-project h2{
   font-family:var(--font-body);font-size:var(--type-subsection);font-weight:var(--weight-semibold);line-height:var(--leading-subheading);margin-bottom:18px;
 }
@@ -97,9 +98,13 @@
   .portfolio-site #main .hero-compact{min-height:454px}
 }
 @media(max-width:1150px){:root{--type-brand:52px}}
-@media(max-width:800px){:root{--type-page:52px;--type-home:52px;--type-section:34px;--type-subsection:22px;--type-lead:21px;--space-heading:22px;--space-section:44px}}
+@media(max-width:800px){
+  :root{--type-page:52px;--type-home:40px;--type-section:34px;--type-subsection:22px;--type-lead:21px;--space-heading:22px;--space-section:44px}
+  .portfolio-site #main .hero-copy h1{max-width:calc(58% - 24px)}
+  .portfolio-site #main .hero-copy h1>span{display:inline}
+}
 @media(max-width:540px){
-  :root{--type-page:40px;--type-home:40px;--type-home-intro:19px;--type-brand:40px;--type-section:30px;--type-subsection:21px;--type-body:17px;--type-lead:20px;--type-meta:13px;--type-nav:15px;--type-action:16px;--space-heading:20px}
+  :root{--type-page:40px;--type-home:36px;--type-home-intro:18px;--type-brand:40px;--type-section:30px;--type-subsection:21px;--type-body:17px;--type-lead:20px;--type-meta:13px;--type-nav:15px;--type-action:16px;--space-heading:20px}
   .portfolio-site #main .hero-copy h1{max-width:100%}
 }
 @media(max-width:380px){:root{--type-brand:34px}}

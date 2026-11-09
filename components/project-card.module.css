@@ -1,4 +1,6 @@
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+.reveal{display:flex;min-width:0}
+.reveal>.card{flex:1}
 .card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:22px;overflow:hidden;background:#fffcf6;scroll-margin-top:28px;transition:border-color .18s,transform .18s}
 .card:hover{border-color:#b5a697;color:var(--foreground)}
 a.card:hover{transform:translateY(-3px)}

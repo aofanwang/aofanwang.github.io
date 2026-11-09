@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, Code2, Eye, Hand, PencilRuler, Play } from 'lucide-react';
 import EducationMarks from '../../../../../components/education-marks';
 import ContactFooter from '../../../../../components/contact-footer';
+import CaseStudyReveal from '../../../../../components/case-study-reveal';
 import '../../../../about/profile.css';
 import styles from './case-study.module.css';
 
@@ -55,50 +56,63 @@ export default function LevelOne() {
       </section>
 
       <section id="problem" className={`${styles.section} ${styles.problem}`} aria-labelledby="problem-title">
+        <CaseStudyReveal>
         <h2 id="problem-title">From Curiosity to Problem-Solving</h2>
         <p>Inspired by my classroom experience, I wanted to explore how children's interest in construction vehicles could become an opportunity for deeper learning.</p>
         <p>While recognizing and naming vehicles can build foundational knowledge, children also need opportunities to apply what they know in meaningful situations.</p>
         <p className={`${styles.designQuestion} type-lead`}>How might we help children move beyond recognition to make decisions, solve problems, and create something of their own?</p>
+        </CaseStudyReveal>
       </section>
 
       <section id="role" className={styles.section} aria-labelledby="role-title">
+        <CaseStudyReveal>
         <h2 id="role-title">My Role</h2>
         <p className={`${styles.roleSummary} type-label`}>Learning Experience Designer | UI/UX Designer | AI-Assisted Developer</p>
         <p>I led the end-to-end design of this interactive learning game, from defining learning objectives and structuring progressive challenges to designing child-friendly interfaces, visual cues, and feedback systems.</p>
         <p>I created the initial visual prototype in Canva and used AI-assisted development tools to turn my designs into a playable web-based learning experience.</p>
+        </CaseStudyReveal>
       </section>
 
       <section id="features" className={styles.section} aria-labelledby="features-title">
-        <h2 id="features-title">Learning Experience Design</h2>
+        <CaseStudyReveal><h2 id="features-title">Learning Experience Design</h2></CaseStudyReveal>
         <ol className={styles.progression} aria-label="Learning progression: Recognize, Apply, Create">
           <li>
+            <CaseStudyReveal>
             <Eye className={styles.progressionIcon} size={28} aria-hidden="true" />
             <h3><span>Level 1</span>Recognize</h3>
             <p>Identify construction vehicles and their functions.</p>
+            </CaseStudyReveal>
             <ArrowRight className={styles.progressionArrow} size={24} aria-hidden="true" />
           </li>
           <li>
+            <CaseStudyReveal delay={0.08}>
             <Hand className={styles.progressionIcon} size={28} aria-hidden="true" />
             <h3><span>Level 2</span>Apply</h3>
             <p>Practice through interactive construction tasks.</p>
+            </CaseStudyReveal>
             <ArrowRight className={styles.progressionArrow} size={24} aria-hidden="true" />
           </li>
           <li>
+            <CaseStudyReveal delay={0.16}>
             <PencilRuler className={styles.progressionIcon} size={28} aria-hidden="true" />
             <h3><span>Level 3</span>Create</h3>
             <p>Apply learned concepts to design a playground.</p>
+            </CaseStudyReveal>
           </li>
         </ol>
         <div className={styles.rationale}>
+          <CaseStudyReveal>
           <h3>Design Rationale</h3>
           <p>I scaffolded the tasks by gradually increasing their complexity, so children can build understanding before taking on more independent challenges.</p>
           <p className={styles.tradeoff}><span className={styles.tradeoffLabel}>Trade-off:</span> A fixed progression provides guidance but may feel repetitive for children who already know the basics.</p>
+          </CaseStudyReveal>
         </div>
       </section>
 
       <section id="thinking" className={styles.section} aria-labelledby="thinking-title">
-        <h2 id="thinking-title">Key Design Decisions</h2>
+        <CaseStudyReveal><h2 id="thinking-title">Key Design Decisions</h2></CaseStudyReveal>
         <div className={styles.decisions}>
+          <CaseStudyReveal>
           <article className={styles.decision}>
             <div>
               <h3 className={styles.decisionHeading}>Feedback That Encourages Thinking</h3>
@@ -113,6 +127,8 @@ export default function LevelOne() {
               <figcaption>Explain the choice, then offer a retry</figcaption>
             </figure>
           </article>
+          </CaseStudyReveal>
+          <CaseStudyReveal>
           <article className={styles.decision}>
             <div>
               <h3 className={styles.decisionHeading}>Visual Guidance for Young Learners</h3>
@@ -128,6 +144,8 @@ export default function LevelOne() {
               <figcaption><span>1</span> Replayable audio <span>2</span> Marked targets</figcaption>
             </figure>
           </article>
+          </CaseStudyReveal>
+          <CaseStudyReveal>
           <article className={styles.decision}>
             <div>
               <h3 className={styles.decisionHeading}>Meaningful Choice &amp; Learner Autonomy</h3>
@@ -142,10 +160,12 @@ export default function LevelOne() {
               <figcaption><span>1</span> Equipment choice <span>2</span> Color choice</figcaption>
             </figure>
           </article>
+          </CaseStudyReveal>
         </div>
       </section>
 
       <section id="development" className={styles.section} aria-labelledby="development-title">
+        <CaseStudyReveal>
         <h2 id="development-title">Development &amp; Iteration</h2>
         <p className="type-lead">From Canva prototype to a playable web game.</p>
         <ol className={`${styles.progression} ${styles.processSteps}`} aria-label="Development process: Design, Build, Play">
@@ -158,13 +178,16 @@ export default function LevelOne() {
           <ul className={styles.technologyTags} aria-label="Project tools and technologies">{technologies.map(tool => <li key={tool}>{tool}</li>)}</ul>
         </div>
         <a className={`${styles.textLink} ${styles.developmentLink}`} href="https://www.canva.com/d/MA8OFJhvKcPcvTT" target="_blank" rel="noopener noreferrer">View Canva prototype<ArrowUpRight size={18} aria-hidden="true" /></a>
+        </CaseStudyReveal>
       </section>
 
       <section id="evaluation" className={`${styles.section} ${styles.reflection}`} aria-labelledby="reflection-title">
+        <CaseStudyReveal>
         <h2 id="reflection-title">Reflection &amp; Next Steps</h2>
         <p>This project helped me explore how learning design principles can be translated into an interactive digital experience for young children.</p>
         <p>While the prototype has been reviewed for functionality, it has not yet been tested with children. My next step is to observe how children navigate the game, respond to feedback, and complete tasks independently, using these observations to guide future improvements.</p>
         <a className={styles.textLink} href="/projects"><ArrowLeft size={18} aria-hidden="true" />Back to Projects</a>
+        </CaseStudyReveal>
       </section>
     </main>
     <ContactFooter />

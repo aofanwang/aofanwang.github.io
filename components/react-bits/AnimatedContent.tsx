@@ -100,7 +100,10 @@ const AnimatedContent = ({
     const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const ctx = gsap.context(() => {
+    const mobile = window.matchMedia('(max-width: 700px)');
+    const ctx = gsap.context(() => {}, el);
+    try {
+    ctx.add(() => {
       const targets: Element[] = stagger > 0 && el.children.length ? Array.from(el.children) : [el];
       const horizontal = direction === 'horizontal';
       const axis = horizontal ? 'x' : 'y';
@@ -109,13 +112,15 @@ const AnimatedContent = ({
 
       gsap.set(el, { visibility: 'visible' });
 
-      if (reduce) {
+      const rect = el.getBoundingClientRect();
+      const restored = (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined)?.type === 'back_forward';
+      if (reduce || window.location.hash || restored || rect.top < window.innerHeight) {
         callbacksRef.current.onComplete?.();
         return;
       }
 
       const from: gsap.TweenVars = {
-        [axis]: distance * sign,
+        [axis]: (mobile.matches ? Math.min(distance, 12) : distance) * sign,
         scale,
         opacity: animateOpacity ? initialOpacity : 1
       };
@@ -179,7 +184,7 @@ const AnimatedContent = ({
           if (once && !scrub) disappear();
         }
       });
-      tl.fromTo(targets, from, to, scrub ? 0 : Math.max(delay, 0));
+      tl.fromTo(targets, from, to, scrub || mobile.matches ? 0 : Math.max(delay, 0));
 
       if (trigger === 'mount') {
         tl.play();
@@ -213,7 +218,11 @@ const AnimatedContent = ({
               tl.reverse();
             }
       });
-    }, el);
+    });
+    } catch {
+      ctx.revert();
+      el.style.visibility = 'visible';
+    }
 
     const reveal = () => {
       if (media.matches) {
@@ -227,9 +236,18 @@ const AnimatedContent = ({
       el.style.visibility = 'visible';
     };
     el.addEventListener('focusin', onFocus, { once: true });
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) onFocus();
+    };
+    window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('hashchange', onFocus);
+    mobile.addEventListener('change', onFocus);
     return () => {
       media.removeEventListener('change', reveal);
       el.removeEventListener('focusin', onFocus);
+      window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('hashchange', onFocus);
+      mobile.removeEventListener('change', onFocus);
       ctx.revert();
     };
   }, [

@@ -17,8 +17,8 @@ copy their hardcoded typography into portfolio components.
 | Role / token | Desktop | Tablet <=800px | Mobile <=540px | Family / weight |
 | --- | --- | --- | --- | --- |
 | H1 / `--type-page` | 64px | 52px | 40px | Editorial / 400 |
-| Home hero / `--type-home` | 64px | 52px | 40px | Editorial / 400 |
-| Home first introduction / `--type-home-intro` | 20px | 20px | 19px | Body / 400 |
+| Home hero / `--type-home` | 48px | 40px | 36px | Editorial / 400 |
+| Home introduction / `--type-home-intro` | 19px | 19px | 18px | Body / 400 |
 | H2 / `--type-section` | 38px | 34px | 30px | Editorial / 400 |
 | H3, H4 / `--type-subsection` | 23px | 22px | 21px | Body / 600 |
 | Lead / `--type-lead` | 22px | 21px | 20px | Body / 400 |
@@ -88,10 +88,12 @@ token through its named component class.
 
 ## Intentional Compact Roles
 
-- Homepage display title uses `--type-home`; normal page titles use `--type-page`.
-- Homepage introduction uses a 1.55 line-height; its second paragraph uses the
-  regular body role and muted color. Headline-to-prose, paragraph, and link gaps
-  are 24px, 18px, and 22px. These rules are scoped to `#main .intro`.
+- Homepage display title uses `--type-home` with a 1.14 line-height;
+  normal page titles use `--type-page` unchanged.
+  Desktop sentences form separate lines when space permits, within the portrait
+  boundary and a 32px gap; tablet/mobile text wraps naturally.
+- The single homepage introduction uses a 1.55 line-height. Headline-to-prose
+  and prose-to-link gaps are 28px and 24px, scoped to `#main .intro`.
 - The homepage header caps its brand at 52px while retaining the existing
   40px/34px mobile scale. Above 1150px, a 349px by 70.4px minimum brand slot
   preserves the original education-mark and navigation positions. Depth layers
@@ -143,9 +145,22 @@ the game has not opted into this scope and its source is unchanged. Run
 ## Motion and Concept Artifacts
 
 Homepage Selected Projects and My Design Philosophy use React Bits AnimatedContent
-for a one-time 12px scroll reveal. Hero and footer remain static. Content stays
-available without JavaScript; keyboard focus and reduced-motion changes reveal it
-immediately. No continuous motion or staggered card layout is introduced.
+for one-time 20px fade-up reveals over 0.7 seconds, with 80ms neighboring-card and
+principle offsets. Mobile movement is capped at 12px without extra delays. The
+hero, portrait, brand and footer remain static. Entrance transforms belong to
+outer wrappers, preserving card hover, Magnet and Pixel Transition transforms.
+The Projects page uses the same grid without scroll animation.
+
+Truck Mission and FeelZoo reuse these settings through `CaseStudyReveal` for
+section content, grouped image-and-explanation blocks, and short staggered
+progressions or contribution grids. Their hero and project-information links
+remain static. Existing sections, grid containers, and connecting arrows retain
+their layout ownership; entrance transforms use separate inner/outer wrappers.
+
+Server content stays visible without JavaScript; failed setup, keyboard focus,
+reduced motion, anchor navigation, and restored history reveal it immediately.
+Content already visible at initialization is not hidden and reanimated. Reveals
+never reverse or replay; finished transforms are cleared.
 
 Teacher Decision Lab's five-stage flow uses native buttons with pressed states,
 arrow/Home/End keyboard navigation, and previous/next controls. All nodes stay

@@ -12,3 +12,6 @@ links remain the keyboard targets. The portfolio wrapper handles live
 reduced-motion and pointer media changes. AnimatedContent uses GSAP, leaves
 server-rendered content visible without JavaScript, and reveals content on
 keyboard focus or when reduced motion is enabled. Its scroll reveal runs once.
+Homepage tuning caps mobile travel at 12px, removes mobile delays, and bypasses
+entrances for already-visible content, anchor loads, and restored history.
+Initialization errors restore the original content instead of hiding it.
