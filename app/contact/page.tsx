@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail } from 'lucide-react';
 import EducationMarks from '../../components/education-marks';
+import DepthBrand from '../../components/depth-brand';
 import ContactFooter from '../../components/contact-footer';
 import CaseStudyReveal from '../../components/case-study-reveal';
 import '../about/profile.css';
@@ -15,7 +16,7 @@ export default function ContactPage() {
       <a className="skip" href="#contact-main">Skip to content</a>
       <header className="wrap header profile-site-header">
         <div className="identity">
-          <div className="identity-brand-row"><a href="/" className="brand">Aofan Wang</a><EducationMarks /></div>
+          <div className="identity-brand-row"><DepthBrand /><EducationMarks /></div>
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact" aria-current="page">Contact</a></nav>

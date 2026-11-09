@@ -30,7 +30,7 @@ copy their hardcoded typography into portfolio components.
 - `--font-editorial`: Georgia, 'Times New Roman', serif.
 - `--font-body`: Arial, Helvetica, sans-serif.
 - `--weight-regular`: 400; `--weight-medium`: 500; `--weight-semibold`: 600.
-- `--type-brand`: 64px desktop, 52px at <=1150px, 40px at <=540px,
+- `--type-brand`: 52px desktop/tablet, 40px at <=540px,
   34px at <=380px. This separate chrome role allows the school marks to fit.
 - `--tracking`: 0. No negative or decorative expanded letter spacing.
 
@@ -96,10 +96,12 @@ token through its named component class.
   Narrower desktop, tablet and mobile text wraps naturally.
 - The single homepage introduction uses a 1.55 line-height. Headline-to-prose
   and prose-to-link gaps are 28px and 24px, scoped to `#main .intro`.
-- The homepage header caps its brand at 52px while retaining the existing
-  40px/34px mobile scale. Above 1150px, a 349px by 70.4px minimum brand slot
-  preserves the original education-mark and navigation positions. Depth layers
-  inherit the brand font; other pages retain their original brand size.
+- All portfolio headers use `DepthBrand`, linking to `/`, and the shared
+  `--type-brand` token without page-specific size overrides. The existing
+  40px/34px mobile scale is retained. Above 1150px, a shared 349px by 70.4px
+  minimum brand slot aligns school marks and preserves homepage positions.
+  Depth layers inherit the same serif font, regular weight and text color;
+  reduced-motion and touch users see static text.
 - Above 1150px the homepage hero retains its existing 454px layout height so
   reducing prose does not resize the absolutely positioned portrait. Portrait
   image, fit, masks, and positioning rules remain unchanged.

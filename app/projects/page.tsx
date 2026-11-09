@@ -1,4 +1,5 @@
 import EducationMarks from '../../components/education-marks';
+import DepthBrand from '../../components/depth-brand';
 import ContactFooter from '../../components/contact-footer';
 import ProjectGrid from '../../components/project-grid';
 import CaseStudyReveal from '../../components/case-study-reveal';
@@ -15,7 +16,7 @@ export default function ProjectsPage() {
     <a className="skip" href="#projects-main">Skip to content</a>
     <header className="wrap header profile-site-header">
       <div className="identity">
-        <div className="identity-brand-row"><a href="/" className="brand">Aofan Wang</a><EducationMarks /></div>
+        <div className="identity-brand-row"><DepthBrand /><EducationMarks /></div>
         <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
       </div>
       <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects" aria-current="page">Projects</a><a href="/contact">Contact</a></nav>

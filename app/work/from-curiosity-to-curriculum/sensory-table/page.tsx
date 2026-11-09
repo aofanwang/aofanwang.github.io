@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import SensoryOrbit from './sensory-orbit';
+import DepthBrand from '../../../../components/depth-brand';
 import CaseStudyReveal from '../../../../components/case-study-reveal';
 import styles from './sensory.module.css';
 
@@ -70,7 +71,7 @@ export default function CourseProject() {
       <a className="skip" href="#project-main">Skip to content</a>
       <header className="wrap header">
         <div className="identity">
-          <a className="brand" href="/">Aofan Wang</a>
+          <DepthBrand />
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">

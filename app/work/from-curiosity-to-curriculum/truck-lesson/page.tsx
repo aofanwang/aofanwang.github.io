@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import DepthBrand from '../../../../components/depth-brand';
 
 export const metadata = { title: 'Truck Lesson | Aofan Wang' };
 
@@ -8,7 +9,7 @@ export default function CourseProject() {
       <a className="skip" href="#project-main">Skip to content</a>
       <header className="wrap header">
         <div className="identity">
-          <a className="brand" href="/">Aofan Wang</a>
+          <DepthBrand />
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">

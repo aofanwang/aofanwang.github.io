@@ -5,7 +5,7 @@
   --type-page:64px;
   --type-home:48px;
   --type-home-intro:19px;
-  --type-brand:64px;
+  --type-brand:52px;
   --type-section:38px;
   --type-subsection:23px;
   --type-body:18px;
@@ -85,7 +85,6 @@
 
 /* Shared chrome is intentionally outside the main content scope. */
 .portfolio-site .header .brand{font-family:var(--font-editorial);font-size:var(--type-brand);font-weight:var(--weight-regular);line-height:var(--leading-title);letter-spacing:var(--tracking)}
-.portfolio-site .home-header .brand{font-size:min(var(--type-brand),52px)}
 .portfolio-site .header nav{font-family:var(--font-body);font-size:var(--type-nav);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
 .portfolio-site .identity-line,.portfolio-site .education-tooltip{font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
 .portfolio-site footer,.portfolio-site .contact-footer :is(h2,a,span){font-family:var(--font-body);font-size:var(--type-meta);font-weight:var(--weight-regular);line-height:var(--leading-compact);letter-spacing:var(--tracking)}
@@ -95,10 +94,9 @@
 
 /* A single stepped scale avoids independent viewport-based sizes in components. */
 @media(min-width:1151px){
-  .home-header .brand{min-width:349px;min-height:70.4px;display:inline-flex;align-items:center}
+  .portfolio-site .header .brand{min-width:349px;min-height:70.4px;display:inline-flex;align-items:center}
   .portfolio-site #main .hero-compact{min-height:454px}
 }
-@media(max-width:1150px){:root{--type-brand:52px}}
 @media(max-width:800px){
   :root{--type-page:52px;--type-home:40px;--type-section:34px;--type-subsection:22px;--type-lead:21px;--space-heading:22px;--space-section:44px}
   .portfolio-site #main .hero-copy h1{max-width:calc(58% - 24px)}

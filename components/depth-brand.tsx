@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from './depth-brand.module.css';
 
 const text = 'Aofan Wang';
@@ -51,10 +52,10 @@ export default function DepthBrand() {
     };
   }, []);
 
-  return <a ref={linkRef} href="#" className={`brand ${styles.link}`}>
+  return <Link ref={linkRef} href="/" className={`brand ${styles.link}`}>
     <span className={styles.stage}>
       {layers.map(depth => <span key={depth} aria-hidden="true" className={styles.layer} style={{ transform: `translateZ(-${depth}px)` }}>{text}</span>)}
       <span className={styles.face}>{text}</span>
     </span>
-  </a>;
+  </Link>;
 }

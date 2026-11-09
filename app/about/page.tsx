@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import EducationMarks from '../../components/education-marks';
+import DepthBrand from '../../components/depth-brand';
 import CaseStudyReveal from '../../components/case-study-reveal';
 import './profile.css';
 
@@ -14,7 +15,7 @@ export default function AboutPage() {
       <a className="skip" href="#about-main">Skip to content</a>
       <header className="wrap header profile-site-header">
         <div className="identity">
-          <div className="identity-brand-row"><a href="/" className="brand">Aofan Wang</a><EducationMarks /></div>
+          <div className="identity-brand-row"><DepthBrand /><EducationMarks /></div>
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">

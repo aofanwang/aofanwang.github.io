@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
+import DepthBrand from '../../../../../components/depth-brand';
 import CaseStudyReveal from '../../../../../components/case-study-reveal';
 
 export const metadata = { title: 'Color & Texture | Aofan Wang' };
@@ -9,7 +10,7 @@ export default function ColorAndTexture() {
       <a className="skip" href="#project-main">Skip to content</a>
       <header className="wrap header">
         <div className="identity">
-          <a className="brand" href="/">Aofan Wang</a>
+          <DepthBrand />
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation">

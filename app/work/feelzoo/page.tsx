@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, CircleCheck, Coins, Eye, MessageCircle, Network, PencilRuler, Sprout, Target, ZoomIn } from 'lucide-react';
 import styles from './feelzoo.module.css';
+import DepthBrand from '../../../components/depth-brand';
 import CaseStudyReveal from '../../../components/case-study-reveal';
 
 export const metadata = {
@@ -45,7 +46,7 @@ export default function FeelZooPage() {
       <a className="skip" href="#project-main">Skip to content</a>
       <header className="wrap header">
         <div className="identity">
-          <a className="brand" href="/">Aofan Wang</a>
+          <DepthBrand />
           <p className="identity-line">Educator · Learning designer · Researcher · Builder</p>
         </div>
         <nav aria-label="Main navigation"><a href="/">Home</a><a href="/about">About Me</a><a href="/projects">Projects</a><a href="/contact">Contact</a></nav>
